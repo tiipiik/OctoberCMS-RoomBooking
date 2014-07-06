@@ -1,0 +1,4 @@
+1.0.1:
+    - First version of RoomBooking
+    - create_bookings_table.php
+    - create_rooms_table.php

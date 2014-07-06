@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        invisible: true
+        
+    name:
+        label: Name
+        
+    is_available:
+        label: Available
+        type: switch

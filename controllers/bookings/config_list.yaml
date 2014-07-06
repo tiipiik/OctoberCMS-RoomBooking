@@ -1,0 +1,36 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: @/plugins/tiipiik/roombooking/models/booking/columns.yaml
+
+# Model Class name
+modelClass: Tiipiik\RoomBooking\Models\Booking
+
+# List Title
+title: Manage Bookings
+
+# Link URL for each record
+recordUrl: tiipiik/roombooking/bookings/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

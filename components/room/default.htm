@@ -1,0 +1,15 @@
+<h1>{{ room.name }}</h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        {{ room.content_html|raw }}
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <img src="{{ room.featured_images[0].thumb(300, 300) }}" title="{{ room.featured_images[0].title }}" alt="{{ room.featured_images[0].description }}">
+    {#
+     # Use this to display all the images
+        {% for image in room.featured_images %}
+        <img src="{{ image.thumb(300, 300) }}" title="{{ image.title }}" alt="{{ image.description }}">
+        {% endfor %}
+    #}
+    </div>
+</div>

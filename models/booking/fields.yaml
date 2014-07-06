@@ -1,0 +1,101 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    room_id:
+        label: Room
+        
+    validated:
+        label: Validated
+        type: checkbox
+        span: auto
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        
+secondaryTabs:
+    stretch: true
+    fields:
+        full_name:
+            tab: Visitor
+            label: Name
+            span: left
+            size: tiny
+            cssClass: col-sm-4
+            
+        email:
+            tab: Visitor
+            label: E-mail
+            span: right
+            size: tiny
+            cssClass: col-sm-4
+            
+        phone:
+            tab: Visitor
+            label: Phone
+            span: left
+            size: tiny
+            cssClass: col-sm-4
+            
+        persons:
+            tab: Visitor
+            label: Persons
+            span: left
+            cssClass: col-sm-4
+            
+        rooms:
+            tab: Visitor
+            label: Rooms
+            span: right
+            cssClass: col-sm-4
+                
+        comment:
+            tab: Visitor
+            label: Comment
+            type: textarea
+            cssClass: col-sm-12
+        
+        arrival:
+            tab: Visitor Stay
+            label: Arrival
+            span: left
+            cssClass: col-sm-4
+            
+        departure:
+            tab: Visitor Stay
+            label: Departure
+            span: right
+            cssClass: col-sm-4
+            
+        total_nights:
+            tab: Visitor Stay
+            label: Total Nights
+            span: left
+            cssClass: col-sm-4
+            
+        amount:
+            tab: Pay Plan
+            label: Amount
+            span: left
+            cssClass: col-sm-4
+            
+        currency:
+            tab: Pay Plan
+            label: Currency
+            span: right
+            cssClass: col-sm-4
+            
+        pay_plan:
+            tab: Pay Plan
+            label: Pay Plan
+            type: dropdown
+            options:
+                0: None
+                MasterCard, Visa: MasterCard, Visa
+                Money: Money
+                Other: Other
+            span: left
+            cssClass: col-sm-4

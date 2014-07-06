@@ -1,0 +1,65 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        invisible: true
+        
+    room_id:
+        label: Room ID
+        
+    full_name:
+        label: Name
+        
+    email:
+        label: E-mail
+        
+    phone:
+        label: Phone
+        
+    persons:
+        label: Persons
+        
+    rooms:
+        label: Rooms
+        
+    arrival:
+        label: Arrival
+        
+    departure:
+        label: Departure
+        
+    total_days:
+        label: Total Days
+        invisible: true
+        
+    total_nights:
+        label: Total Nights
+        invisible: true
+        
+    amount:
+        label: Amount
+        invisible: true
+        
+    currency:
+        label: Currency
+        invisible: true
+        
+    pay_plan:
+        label: Pay plan
+        invisible: true
+        
+    comment:
+        label: Comment
+        invisible: true
+        
+    validated:
+        label: Validated
+        type: switch
+        
+    created_at:
+        label: Registered
+        type: datetime
+        invisible: true

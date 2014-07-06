@@ -1,0 +1,23 @@
+<?php if (!$this->fatalError): ?>
+
+    <div class="layout fancy-layout">
+        <?= Form::open([
+            'class' => 'layout',
+            'data-change-monitor' => 'true',
+            'data-window-close-confirm' => 'The room is not saved.',
+            'id' => 'post-form'
+        ]) ?>
+            <?= $this->formRender() ?>
+
+        <?= Form::close() ?>
+    </div>
+
+<?php else: ?>
+    <div class="padded-container">
+        <div class="control-breadcrumb">
+            <?= Block::placeholder('breadcrumb') ?>
+        </div>
+        <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+        <p><a href="<?= Backend::url('tiipiik/roombooking/rooms') ?>" class="btn btn-default">Return to room list</a></p>
+    </div>
+<?php endif ?>
