@@ -43,7 +43,7 @@ secondaryTabs:
             margin: 15
 
         preview:
-            type: Tiipiik\RoomBooking\FormWidgets\Preview
+            type: Tiipiik\Booking\FormWidgets\Preview
             tab: Full Description
             stretch: true
             span: right

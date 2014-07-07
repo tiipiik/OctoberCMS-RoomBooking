@@ -116,15 +116,15 @@ class Booking extends Model
             $departure = explode('-', $d->{"departure"});
             
             // Compute difference between arrival and departure, how many nights are booked ?
-            $aDate = Carbon::create($arrival[2], $arrival[1], $arrival[0], 0);
-            $dDate = Carbon::create($departure[2], $departure[1], $departure[0], 0);
+            $aDate = Carbon::create($arrival[0], $arrival[1], $arrival[2], 0);
+            $dDate = Carbon::create($departure[0], $departure[1], $departure[2], 0);
             
             $diffInDays = $dDate->diffInDays($aDate);
             
             // for each booked day, add entry in the array
             for ($i=1;$i<=$diffInDays;$i++)
             {
-                $nextDate = $aDate->addDay()->format("d-m-Y");
+                $nextDate = $aDate->addDay()->format("Y-m-d");
                 $nextDate = explode('-', $nextDate);
                 
                 // Place year into array
@@ -135,14 +135,14 @@ class Booking extends Model
                     ];
                 }
                 // Place month into array
-                if ( !isset( $bookedDates[ (int) $nextDate[2] ][ (int) $nextDate[1]]) )
+                if ( !isset( $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1]]) )
                 {
-                    $bookedDates[ (int) $nextDate[2] ][ (int) $nextDate[1] ] = [];
+                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ] = [];
                 }
                 // Place day into array
-                if ( !isset($bookedDates[ (int) $nextDate[2] ][ (int) $nextDate[1] ][ (int) $nextDate[0] ]) )
+                if ( !isset($bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][ (int) $nextDate[2] ]) )
                 {
-                    $bookedDates[ (int) $nextDate[2] ][ (int) $nextDate[1] ][] = (int) $nextDate[0];
+                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][] = (int) $nextDate[2];
                 }
             }
         }
