@@ -64,12 +64,16 @@ secondaryTabs:
         arrival:
             tab: Visitor Stay
             label: Arrival
+            type: datepicker
+            mode: date
             span: left
             cssClass: col-sm-4
             
         departure:
             tab: Visitor Stay
             label: Departure
+            type: datepicker
+            mode: date
             span: right
             cssClass: col-sm-4
             

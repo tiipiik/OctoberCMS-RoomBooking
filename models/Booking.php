@@ -65,6 +65,7 @@ class Booking extends Model
         $aRooms = [
             ''=>'There is no room, create one.'
         ];
+        
         foreach ($allRooms as $data)
         {
             $aRooms[$data->id] = $data->name;

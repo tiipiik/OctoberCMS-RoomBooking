@@ -8,7 +8,7 @@ columns:
         invisible: true
         
     room_id:
-        label: Room ID
+        label: Room
         
     full_name:
         label: Name
