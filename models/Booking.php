@@ -49,7 +49,9 @@ class Booking extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'Room' => ['Tiipiik\RoomBooking\Models\Room']
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
@@ -62,9 +64,14 @@ class Booking extends Model
         $allRooms = Room::select('id','name')
             ->get();
         
-        $aRooms = [
-            ''=>'There is no room, create one.'
-        ];
+        $aRooms = [];
+        
+        if (sizeof($allRooms) == 0)
+        {
+            $aRooms = [
+                ''=>'There is no room, create one.'
+            ];
+        }
         
         foreach ($allRooms as $data)
         {
@@ -73,7 +80,7 @@ class Booking extends Model
         
         return $aRooms;
     }
-    
+
     public static function getBookedDates($roomSlug = null)
     {
         // Retrieve room id from slug

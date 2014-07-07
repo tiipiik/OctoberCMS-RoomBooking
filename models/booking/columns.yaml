@@ -7,8 +7,10 @@ columns:
         label: ID
         invisible: true
         
-    room_id:
+    name:
         label: Room
+        relation: Room
+        select: @name
         
     full_name:
         label: Name

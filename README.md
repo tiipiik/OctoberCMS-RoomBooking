@@ -40,7 +40,3 @@ Front-end:
 
 * add localization,
 * return an error when trying to book a room on non-available dates
-
-Back-end:
-
-* display room name instead of id
