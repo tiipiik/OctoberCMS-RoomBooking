@@ -1,4 +1,4 @@
-<?php namespace Tiipiik\RoomBooking\Updates;
+<?php namespace Tiipiik\Booking\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
@@ -8,7 +8,7 @@ class CreateRoomsTable extends Migration
 
     public function up()
     {
-        Schema::create('tiipiik_roombooking_rooms', function($table)
+        Schema::create('tiipiik_booking_rooms', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -25,7 +25,7 @@ class CreateRoomsTable extends Migration
 
     public function down()
     {
-        Schema::drop('tiipiik_roombooking_rooms');
+        Schema::drop('tiipiik_booking_rooms');
     }
 
 }

@@ -6,22 +6,22 @@
 name: Room
 
 # Model Form Field configuration
-form: @/plugins/tiipiik/roombooking/models/room/fields.yaml
+form: @/plugins/tiipiik/booking/models/room/fields.yaml
 
 # Model Class name
-modelClass: Tiipiik\RoomBooking\Models\Room
+modelClass: Tiipiik\Booking\Models\Room
 
 # Default redirect location
-defaultRedirect: tiipiik/roombooking/rooms
+defaultRedirect: tiipiik/booking/rooms
 
 # Create page
 create:
     title: Create Rooms
-    redirect: tiipiik/roombooking/rooms/update/:id
-    redirectClose: tiipiik/roombooking/rooms
+    redirect: tiipiik/booking/rooms/update/:id
+    redirectClose: tiipiik/booking/rooms
 
 # Update page
 update:
     title: Edit Rooms
-    redirect: tiipiik/roombooking/rooms
-    redirectClose: tiipiik/roombooking/rooms
+    redirect: tiipiik/booking/rooms
+    redirectClose: tiipiik/booking/rooms

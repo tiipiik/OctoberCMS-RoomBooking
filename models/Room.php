@@ -1,11 +1,11 @@
-<?php namespace Tiipiik\RoomBooking\Models;
+<?php namespace Tiipiik\Booking\Models;
 
 use App;
 use Str;
 use Model;
 use October\Rain\Support\Markdown;
 use October\Rain\Support\ValidationException;
-use Tiipiik\RoomBooking\Classes\TagProcessor;
+use Tiipiik\Booking\Classes\TagProcessor;
 use Cms\Classes\Controller as BaseController;
 
 /**
@@ -16,7 +16,7 @@ class Room extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tiipiik_roombooking_rooms';
+    public $table = 'tiipiik_booking_rooms';
 
     /**
      * @var array Guarded fields

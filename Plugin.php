@@ -1,8 +1,8 @@
-<?php namespace Tiipiik\RoomBooking;
+<?php namespace Tiipiik\Booking;
 
 use Backend;
 use System\Classes\PluginBase;
-use Tiipiik\RoomBooking\Classes\TagProcessor;
+use Tiipiik\Booking\Classes\TagProcessor;
 
 /**
  * Booking Plugin Information File
@@ -17,7 +17,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'RoomBooking',
+            'name'        => 'Booking',
             'description' => 'Room Booking plugin, with front and backend',
             'author'      => 'Tiipiik',
             'icon'        => 'icon-leaf'
@@ -27,7 +27,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'Tiipiik\RoomBooking\FormWidgets\Preview' => [
+            'Tiipiik\Booking\FormWidgets\Preview' => [
                 'label' => 'Preview',
                 'alias' => 'preview'
             ]
@@ -37,18 +37,18 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Tiipiik\RoomBooking\Components\RoomList' => 'room_list',
-            'Tiipiik\RoomBooking\Components\Room' => 'room',
-            'Tiipiik\RoomBooking\Components\BookingForm' => 'booking_form',
+            'Tiipiik\Booking\Components\RoomList' => 'room_list',
+            'Tiipiik\Booking\Components\Room' => 'room',
+            'Tiipiik\Booking\Components\BookingForm' => 'booking_form',
         ];
     }
     
     public function registerNavigation()
     {
         return [
-            'roombooking' => [
+            'booking' => [
                 'label'       => 'Room Booking',
-                'url'         => Backend::url('tiipiik/roombooking/bookings'),
+                'url'         => Backend::url('tiipiik/booking/bookings'),
                 'icon'        => 'icon-list',
                 'permissions' => ['user:*'],
                 'order'       => 500,
@@ -56,13 +56,13 @@ class Plugin extends PluginBase
                 'sideMenu'    => [
                     'bookings'  => [
                         'label'       => 'Bookings',
-                        'url'         => Backend::url('tiipiik/roombooking/bookings'),
+                        'url'         => Backend::url('tiipiik/booking/bookings'),
                         'icon'        => 'icon-list',
                         'permissions' => ['user:*'],
                     ],
                     'rooms'  => [
                         'label'       => 'Rooms',
-                        'url'         => Backend::url('tiipiik/roombooking/rooms'),
+                        'url'         => Backend::url('tiipiik/booking/rooms'),
                         'icon'        => 'icon-gear',
                         'permissions' => ['user:*'],
                     ],

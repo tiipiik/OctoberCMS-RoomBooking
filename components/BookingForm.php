@@ -1,4 +1,4 @@
-<?php namespace Tiipiik\RoomBooking\Components;
+<?php namespace Tiipiik\Booking\Components;
 
 use Flash;
 use Input;
@@ -8,8 +8,8 @@ use Exception;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
-use Tiipiik\RoomBooking\Models\Booking;
-use Tiipiik\RoomBooking\Components\Room;
+use Tiipiik\Booking\Models\Booking;
+use Tiipiik\Booking\Components\Room;
 
 class BookingForm extends ComponentBase
 {
@@ -47,9 +47,9 @@ class BookingForm extends ComponentBase
     
     public function onRun()
     {
-        $this->addCss('/plugins/tiipiik/roombooking/assets/css/datepicker.css');
-        $this->addJs('/plugins/tiipiik/roombooking/assets/js/bootstrap-datepicker.js');
-        $this->addJS('/plugins/tiipiik/roombooking/assets/js/dpb-booking.js');
+        $this->addCss('/plugins/tiipiik/booking/assets/css/datepicker.css');
+        $this->addJs('/plugins/tiipiik/booking/assets/js/bootstrap-datepicker.js');
+        $this->addJS('/plugins/tiipiik/booking/assets/js/dpb-booking.js');
         
         $room = new Room;
         $slug = $room->property('idParam');

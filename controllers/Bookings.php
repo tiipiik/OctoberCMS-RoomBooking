@@ -1,4 +1,4 @@
-<?php namespace Tiipiik\RoomBooking\Controllers;
+<?php namespace Tiipiik\Booking\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -22,6 +22,6 @@ class Bookings extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Tiipiik.RoomBooking', 'roombooking', 'bookings');
+        BackendMenu::setContext('Tiipiik.Booking', 'booking', 'bookings');
     }
 }

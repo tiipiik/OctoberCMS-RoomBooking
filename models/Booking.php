@@ -1,8 +1,8 @@
-<?php namespace Tiipiik\RoomBooking\Models;
+<?php namespace Tiipiik\Booking\Models;
 
 use Model;
 use Carbon\Carbon;
-use Tiipiik\RoomBooking\Models\Room;
+use Tiipiik\Booking\Models\Room;
 
 /**
  * Booking Model
@@ -12,7 +12,7 @@ class Booking extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tiipiik_roombooking_bookings';
+    public $table = 'tiipiik_booking_bookings';
 
     /**
      * @var array Guarded fields
@@ -50,7 +50,7 @@ class Booking extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'Room' => ['Tiipiik\RoomBooking\Models\Room']
+        'Room' => ['Tiipiik\Booking\Models\Room']
     ];
     public $belongsToMany = [];
     public $morphTo = [];

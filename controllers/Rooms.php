@@ -1,8 +1,8 @@
-<?php namespace Tiipiik\RoomBooking\Controllers;
+<?php namespace Tiipiik\Booking\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Tiipiik\RoomBooking\Models\Room;
+use Tiipiik\Booking\Models\Room;
 
 /**
  * Rooms Back-end Controller
@@ -23,16 +23,16 @@ class Rooms extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Tiipiik.RoomBooking', 'roombooking', 'rooms');
+        BackendMenu::setContext('Tiipiik.Booking', 'booking', 'rooms');
         
-        $this->addCss('/plugins/tiipiik/roombooking/assets/css/tiipiik.booking-preview.css');
-        $this->addCss('/plugins/tiipiik/roombooking/assets/css/tiipiik.booking-preview-theme-default.css');
+        $this->addCss('/plugins/tiipiik/booking/assets/css/tiipiik.booking-preview.css');
+        $this->addCss('/plugins/tiipiik/booking/assets/css/tiipiik.booking-preview-theme-default.css');
 
-        $this->addCss('/plugins/tiipiik/roombooking/assets/vendor/prettify/prettify.css');
-        $this->addCss('/plugins/tiipiik/roombooking/assets/vendor/prettify/theme-desert.css');
+        $this->addCss('/plugins/tiipiik/booking/assets/vendor/prettify/prettify.css');
+        $this->addCss('/plugins/tiipiik/booking/assets/vendor/prettify/theme-desert.css');
 
-        $this->addJs('/plugins/tiipiik/roombooking/assets/js/post-form.js');
-        $this->addJs('/plugins/tiipiik/roombooking/assets/vendor/prettify/prettify.js');
+        $this->addJs('/plugins/tiipiik/booking/assets/js/post-form.js');
+        $this->addJs('/plugins/tiipiik/booking/assets/vendor/prettify/prettify.js');
     }
 
     public function index_onDelete()

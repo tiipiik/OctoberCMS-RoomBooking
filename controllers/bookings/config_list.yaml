@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: @/plugins/tiipiik/roombooking/models/booking/columns.yaml
+list: @/plugins/tiipiik/booking/models/booking/columns.yaml
 
 # Model Class name
-modelClass: Tiipiik\RoomBooking\Models\Booking
+modelClass: Tiipiik\Booking\Models\Booking
 
 # List Title
 title: Manage Bookings
 
 # Link URL for each record
-recordUrl: tiipiik/roombooking/bookings/update/:id
+recordUrl: tiipiik/booking/bookings/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

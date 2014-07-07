@@ -1,9 +1,9 @@
-<?php namespace Tiipiik\RoomBooking\Components;
+<?php namespace Tiipiik\Booking\Components;
 
 use App;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Tiipiik\RoomBooking\Models\Room;
+use Tiipiik\Booking\Models\Room;
 
 class RoomList extends ComponentBase
 {

@@ -1,9 +1,9 @@
-<?php namespace Tiipiik\RoomBooking\Components;
+<?php namespace Tiipiik\Booking\Components;
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Request;
 use Response;
-use Tiipiik\RoomBooking\Models\Room as RoomDetails;
+use Tiipiik\Booking\Models\Room as RoomDetails;
 
 class Room extends ComponentBase
 {

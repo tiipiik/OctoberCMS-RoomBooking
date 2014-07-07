@@ -1,4 +1,4 @@
-# Room booking plugin for OctoberCMS
+# Booking plugin for OctoberCMS
 
 A simple plugin to manage rooms and bookings for October CMS
 

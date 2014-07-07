@@ -1,10 +1,10 @@
-<?php namespace Tiipiik\RoomBooking\FormWidgets;
+<?php namespace Tiipiik\Booking\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
 use System\Models\File;
 use System\Classes\SystemException;
 use October\Rain\Support\ValidationException;
-use Tiipiik\RoomBooking\Models\Room;
+use Tiipiik\Booking\Models\Room;
 use Validator;
 use Input;
 use Response;

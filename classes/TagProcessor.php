@@ -1,4 +1,4 @@
-<?php namespace Tiipiik\RoomBooking\Classes;
+<?php namespace Tiipiik\Booking\Classes;
 
 /**
  * Rainlab.Blog Markdown tag processor.
