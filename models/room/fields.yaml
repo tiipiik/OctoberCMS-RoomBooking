@@ -19,7 +19,7 @@ fields:
 
     is_available:
         label: Available (Manualy activate or deactivate)
-        type: checkbox
+        type: switch
         span: auto
 
     toolbar:
@@ -43,7 +43,7 @@ secondaryTabs:
             margin: 15
 
         preview:
-            type: Tiipiik\Booking\FormWidgets\Preview
+            type: Tiipiik\RoomBooking\FormWidgets\Preview
             tab: Full Description
             stretch: true
             span: right

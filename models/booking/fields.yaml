@@ -5,10 +5,13 @@
 fields:
     room_id:
         label: Room
+        type: dropdown
+        options: getRoomsOptions
         
     validated:
         label: Validated
-        type: checkbox
+        type: switch
+        default: 0
         span: auto
 
     toolbar:

@@ -21,9 +21,11 @@ columns:
         
     persons:
         label: Persons
+        invisible: true
         
     rooms:
         label: Rooms
+        invisible: true
         
     arrival:
         label: Arrival

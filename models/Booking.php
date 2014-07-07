@@ -57,6 +57,22 @@ class Booking extends Model
     public $attachOne = [];
     public $attachMany = [];
     
+    public static function getRoomsOptions()
+    {
+        $allRooms = Room::select('id','name')
+            ->get();
+        
+        $aRooms = [
+            ''=>'There is no room, create one.'
+        ];
+        foreach ($allRooms as $data)
+        {
+            $aRooms[$data->id] = $data->name;
+        }
+        
+        return $aRooms;
+    }
+    
     public static function getBookedDates($roomSlug = null)
     {
         // Retrieve room id from slug
