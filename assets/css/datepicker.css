@@ -182,10 +182,10 @@
 }
 
 /* Tiipiik\Booking\Components\BookingForm */
+.datepicker .day.disabled.bg-warning {
+    color:#bbb !important;
+}
 #showAvailableDates .datepicker .active {
     background:#49c0f3 !important;
     color:#fff !important;
-}
-#showAvailableDates .datepicker .bg-warning {
-    color:#333 !important;
 }

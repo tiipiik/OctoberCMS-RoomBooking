@@ -71,7 +71,7 @@ bookedDates = {{ booked_dates|raw }};
                 </div>
                 <div class="row">
                     <div class="col-xs-12" id="totalNights">
-                        <p class="bg-success hide" style="padding:10px 15px;"><span></span> nights to book</p>
+                        <p class="bg-success hide" style="padding:10px 15px;"><span class="total">0</span> night<span class="plural"></span> to book</p>
                     </div>
                 </div>
                 
@@ -90,8 +90,8 @@ bookedDates = {{ booked_dates|raw }};
                 </div>
             </div>
             <div class="col-xs-12 col-sm-4">
-                <div class="" data-date="{{"now"|date('d/m/Y')}}" data-date-format="dd-mm-yyyy" id="showAvailableDates">
-                    <input type="text" value="{{"now"|date('d/m/Y')}}" readonly="readonly" class="hide">
+                <div data-date="{{"now"|date('Y-m-d')}}" data-date-format="yyyy-mm-dd" id="showAvailableDates">
+                    <input type="text" value="{{"now"|date('Y-m-d')}}" readonly="readonly" class="hide">
                 </div>
             </div>
         </div>

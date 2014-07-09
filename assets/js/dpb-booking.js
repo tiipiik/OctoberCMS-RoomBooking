@@ -32,8 +32,11 @@
                 diff = Math.floor((d2.getTime() - d1.getTime()) / 86400000); // ms per day
             }
             if (!isNaN(diff) || diff > 0) {
-                $('#totalNights p span').html(diff);
+                $('#totalNights p .total').html(diff);
                 $('#totalNights p').removeClass('hide');
+                if (diff > 1) {
+                    $('#totalNights p .plural').html('s');
+                }
             }
         }
     
