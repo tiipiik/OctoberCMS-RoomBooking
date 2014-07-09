@@ -11,6 +11,31 @@ use October\Rain\Support\ValidationException;
 use Tiipiik\Booking\Models\Booking;
 use Tiipiik\Booking\Components\Room;
 
+
+// custom validation rules (could be place in an external file
+Validator::extend('multiple_email', function($field, $value, $params)
+{
+    $rules = array();
+    foreach ($value as $email)
+    {
+        $rules[] = array($email=>'email');
+    }
+
+    // start validation as 0
+    $validation = 0;
+    $validator = Validator::make($value, $rules);
+    
+    if (!$validator->passes())
+    {
+        $validation++;
+    }
+    
+    if ($validation > 0)
+        return false;
+    else
+        return true;
+});
+
 class BookingForm extends ComponentBase
 {
 

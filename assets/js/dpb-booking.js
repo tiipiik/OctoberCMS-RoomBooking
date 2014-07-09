@@ -4,7 +4,7 @@
         inline: true,
         beforeShowDay: function (date) {
             var theday = date.getDate();
-            // index of months are based on 0, so we need to add 1 to the month for matching correctly
+            /* index of months are based on 0, so we need to add 1 to the month for matching correctly */
             var themonth = date.getMonth() + 1;
             var theyear = date.getFullYear();
             
@@ -46,11 +46,21 @@
         beforeShowDay: function(date) {
             if (date.valueOf() < now.valueOf())
                 return {enabled:false};
+                
+            var theday = date.getDate();
+            var themonth = date.getMonth() + 1;
+            var theyear = date.getFullYear();
+            
+            if (bookedDates[theyear] && bookedDates[theyear][themonth])
+                if ($.inArray(theday, bookedDates[theyear][themonth]) != -1) {
+                    return {enabled:false, classes:'bg-warning'};
+                }
         }
     }).on('changeDate', function(ev) {
         if (ev.dates.valueOf() > checkout.dates.valueOf()) {
-            var newDate = new Date(ev.dates);
+            var newDate = new Date(ev.dates.valueOf());
             newDate.setDate(newDate.getDate() + 1);
+            checkout.setStartDate(newDate);
             checkout.setDate(newDate);
         }
         checkin.hide();
