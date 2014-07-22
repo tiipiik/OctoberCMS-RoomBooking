@@ -2,3 +2,6 @@
     - First version of Booking
     - create_bookings_table.php
     - create_rooms_table.php
+1.0.2:
+    - Improve datepicker dates
+    - Avoid booking negative dates in datepicker
