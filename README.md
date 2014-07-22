@@ -40,3 +40,7 @@ Front-end:
 
 * add localization,
 * return an error when trying to book a room on non-available dates
+
+## License
+
+The Import plugin for OctoberCMS is open-sourced software licensed under the MIT license

@@ -12,8 +12,8 @@ use Tiipiik\Booking\Models\Booking;
 use Tiipiik\Booking\Components\Room;
 
 
-// custom validation rules (could be place in an external file
-Validator::extend('multiple_email', function($field, $value, $params)
+// custom validation rules (could be place in an external file) -- use with not_in rule
+Validator::extend('is_booked_date', function($field, $value, $params)
 {
     $rules = array();
     foreach ($value as $email)
