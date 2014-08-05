@@ -4,7 +4,7 @@
 
 fields:
     room_id:
-        label: tiipiik.booking::lang.room.room_id_label
+        label: tiipiik.booking::lang.booking.backend.room_id_label
         type: dropdown
         options: getRoomsOptions
         
@@ -23,81 +23,81 @@ secondaryTabs:
     stretch: true
     fields:
         full_name:
-            tab: Visitor
-            label: Name
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.full_name
             span: left
             size: tiny
             cssClass: col-sm-4
             
         email:
-            tab: Visitor
-            label: E-mail
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.email
             span: right
             size: tiny
             cssClass: col-sm-4
             
         phone:
-            tab: Visitor
-            label: Phone
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.phone
             span: left
             size: tiny
             cssClass: col-sm-4
             
         persons:
-            tab: Visitor
-            label: Persons
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.persons
             span: left
             cssClass: col-sm-4
             
         rooms:
-            tab: Visitor
-            label: Rooms
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.rooms
             span: right
             cssClass: col-sm-4
                 
         comment:
-            tab: Visitor
-            label: Comment
+            tab: tiipiik.booking::lang.booking.backend.visitor.tab_title
+            label: tiipiik.booking::lang.booking.backend.visitor.comment
             type: textarea
             cssClass: col-sm-12
         
         arrival:
-            tab: Visitor Stay
-            label: Arrival
+            tab: tiipiik.booking::lang.booking.backend.stay.tab_title
+            label: tiipiik.booking::lang.booking.backend.stay.checkin
             type: datepicker
             mode: date
             span: left
             cssClass: col-sm-4
             
         departure:
-            tab: Visitor Stay
-            label: Departure
+            tab: tiipiik.booking::lang.booking.backend.stay.tab_title
+            label: tiipiik.booking::lang.booking.backend.stay.checkout
             type: datepicker
             mode: date
             span: right
             cssClass: col-sm-4
             
         total_nights:
-            tab: Visitor Stay
-            label: Total Nights
+            tab: tiipiik.booking::lang.booking.backend.stay.tab_title
+            label: tiipiik.booking::lang.booking.backend.stay.nights
             span: left
             cssClass: col-sm-4
             
         amount:
-            tab: Pay Plan
-            label: Amount
+            tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
+            label: tiipiik.booking::lang.booking.amount
             span: left
             cssClass: col-sm-4
             
         currency:
-            tab: Pay Plan
-            label: Currency
+            tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
+            label: tiipiik.booking::lang.booking.currency
             span: right
             cssClass: col-sm-4
             
         pay_plan:
-            tab: Pay Plan
-            label: Pay Plan
+            tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
+            label: tiipiik.booking::lang.booking.backend.pay_plan.options_title
             type: dropdown
             options:
                 0: None

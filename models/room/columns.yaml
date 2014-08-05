@@ -8,8 +8,8 @@ columns:
         invisible: true
         
     name:
-        label: Name
+        label: tiipiik.booking::lang.room.backend.columns.name
         
     is_available:
-        label: Available
+        label: tiipiik.booking::lang.room.backend.columns.available
         type: switch

@@ -4,51 +4,51 @@
 
 columns:
     id:
-        label: ID
+        label: tiipiik.booking::lang.booking.backend.columns.id
         invisible: true
         
     name:
-        label: Room
+        label: tiipiik.booking::lang.booking.backend.columns.room_name
         relation: Room
         select: @name
         
     full_name:
-        label: Name
+        label: tiipiik.booking::lang.booking.backend.columns.customer_name
         
     email:
-        label: E-mail
+        label: tiipiik.booking::lang.booking.backend.columns.customer_email
         
     phone:
-        label: Phone
+        label: tiipiik.booking::lang.booking.backend.columns.customer_phone
         
     persons:
-        label: Persons
+        label: tiipiik.booking::lang.booking.backend.columns.persons
         invisible: true
         
     rooms:
-        label: Rooms
+        label: tiipiik.booking::lang.booking.backend.columns.rooms
         invisible: true
         
     arrival:
-        label: Arrival
+        label: tiipiik.booking::lang.booking.backend.columns.checkin
         
     departure:
-        label: Departure
+        label: tiipiik.booking::lang.booking.backend.columns.checkout
         
     total_days:
-        label: Total Days
+        label: tiipiik.booking::lang.booking.backend.columns.total_days
         invisible: true
         
     total_nights:
-        label: Total Nights
+        label: tiipiik.booking::lang.booking.backend.columns.total_nights
         invisible: true
         
     amount:
-        label: Amount
+        label: tiipiik.booking::lang.booking.amount
         invisible: true
         
     currency:
-        label: Currency
+        label: tiipiik.booking::lang.booking.currency
         invisible: true
         
     pay_plan:
@@ -60,10 +60,10 @@ columns:
         invisible: true
         
     validated:
-        label: Validated
+        label: tiipiik.booking::lang.booking.validated
         type: switch
         
     created_at:
-        label: Registered
+        label: tiipiik.booking::lang.booking.registered
         type: datetime
         invisible: true

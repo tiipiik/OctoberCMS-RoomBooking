@@ -4,14 +4,14 @@
 
 fields:
     name:
-        label: Name or Number
+        label: tiipiik.booking::lang.room.backend.name
         span: left
-        placeholder: New room name or number
+        placeholder: tiipiik.booking::lang.room.backend.name_placeholder
         
     slug:
-        label: Slug
+        label: tiipiik.booking::lang.room.backend.slug
         span: right
-        placeholder: new-room-name-or-number
+        placeholder: tiipiik.booking::lang.room.backend.slug_placeholder
         attributes:
             data-input-preset: 'input[name="Room[name]"]'
             data-input-preset-type: slug
@@ -31,7 +31,7 @@ secondaryTabs:
     stretch: true
     fields:
         content:
-            tab: Full Description
+            tab: tiipiik.booking::lang.room.backend.description_tab_title
             stretch: true
             span: left
             cssClass: no-padding
@@ -44,26 +44,26 @@ secondaryTabs:
 
         preview:
             type: Tiipiik\Booking\FormWidgets\Preview
-            tab: Full Description
+            tab: tiipiik.booking::lang.room.backend.description_tab_title
             stretch: true
             span: right
             cssClass: no-padding
     
         excerpt:
-            tab: Manage
-            label: Excerpt
+            tab: tiipiik.booking::lang.room.backend.manage_tab_title
+            label: tiipiik.booking::lang.room.backend.excerpt
             type: textarea
             size: small
             span: col-xs-12
             
         max_persons:
-            tab: Manage
-            label: Max number of persons in the room
+            tab: tiipiik.booking::lang.room.backend.manage_tab_title
+            label: tiipiik.booking::lang.room.backend.max_persons
             span: auto
     
         featured_images:
-            tab: Manage
-            label: Featured Images
+            tab: tiipiik.booking::lang.room.backend.manage_tab_title
+            label: tiipiik.booking::lang.room.backend.featured_images
             type: fileupload
             mode: image
             imageWidth: 200
