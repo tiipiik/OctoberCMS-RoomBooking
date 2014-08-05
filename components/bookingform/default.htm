@@ -2,16 +2,16 @@
 var bookedDates = {};
 bookedDates = {{ booked_dates|raw }};
 </script>
-
+<?= echo 'This is a test' ?>
 <form
     data-request="onBooking">
-    
+
     <fieldset>
-        <legend>You</legend>
+        <legend>{{ 'You'|_ }}</legend>
         <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="form-group">
-                    <label for="userBookingName">Name*</label>
+                    <label for="userBookingName">{{ 'Name'|_ }}*</label>
                     <input name="name" type="text" class="form-control" id="userBookingName" placeholder="Enter your name and first name">
                 </div>
             </div>

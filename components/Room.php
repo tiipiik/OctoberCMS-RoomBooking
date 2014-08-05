@@ -31,6 +31,8 @@ class Room extends ComponentBase
     public function onRun()
     {
         $this->room = $this->page['room'] = $this->loadRoom();
+        $this->page->meta_title = $this->room->name;
+        $this->page->meta_description = $this->room->except;
             
         if (!$this->room) {
             return Response::make($this->controller->run('404'), 400, array());

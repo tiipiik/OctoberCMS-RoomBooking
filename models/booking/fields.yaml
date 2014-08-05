@@ -4,7 +4,7 @@
 
 fields:
     room_id:
-        label: Room
+        label: tiipiik.booking::lang.room.room_id_label
         type: dropdown
         options: getRoomsOptions
         

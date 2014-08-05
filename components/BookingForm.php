@@ -9,7 +9,7 @@ use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
 use Tiipiik\Booking\Models\Booking;
-use Tiipiik\Booking\Components\Room;
+//use Tiipiik\Booking\Components\Room;
 
 
 // custom validation rules (could be place in an external file) -- use with not_in rule
@@ -82,7 +82,6 @@ class BookingForm extends ComponentBase
         $slug = $this->param($slug);
         
         $bookedDates = Booking::getBookedDates($slug);
-        
         $this->booked_dates = $this->page['booked_dates'] = json_encode($bookedDates);
     }
     
