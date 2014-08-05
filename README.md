@@ -35,6 +35,9 @@ The component has the following properties:
 * **redirect** - the page you want the user to be redirected after booking (payment of thank you for example).
 * **roomPageParamName** - used to get informations about the room, like booked dates to display in the calendar. This property must be the same that the **slugParamName** property in the `roomDetails`component.
 
+### Issues
+Feel free to report any issues at https://github.com/tiipiik/OctoberCMS-RoomBooking
+
 ## ToDo List
 Front-end:
 

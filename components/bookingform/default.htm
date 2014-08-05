@@ -17,13 +17,13 @@ bookedDates = {{ booked_dates|raw }};
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="form-group">
-                    <label for="userBookingEmail">Email*</label>
+                    <label for="userBookingEmail">{{ 'Email'|_ }}*</label>
                     <input name="email" type="email" class="form-control" id="userBookingEmail" placeholder="Enter your email">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="form-group">
-                    <label for="userBookingPhone">Phone*</label>
+                    <label for="userBookingPhone">{{ 'Phone'|_ }}*</label>
                     <input name="phone" type="tel" class="form-control" id="userBookingPhone" placeholder="Enter your phone number">
                 </div>
             </div>
@@ -31,20 +31,20 @@ bookedDates = {{ booked_dates|raw }};
     </fieldset>
         
     <fieldset>
-        <legend>Your Visit</legend>
+        <legend>{{ 'Your visit'|_ }}</legend>
         <div class="row">
             <div class="col-xs-12 col-sm-8">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <label for="userBookingName">Persons*</label>
-                            <input name="persons" type="number" class="form-control" id="userBookingName" placeholder="Enter your name and first name">
+                            <label for="userBookingName">{{ 'Persons'|_ }}*</label>
+                            <input name="persons" type="number" class="form-control" id="userBookingPersons" placeholder="How many people ?">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <label for="userBookingEmail">Rooms*</label>
-                            <input name="rooms" type="number" class="form-control" id="userBookingEmail" placeholder="Enter your email">
+                            <label for="userBookingEmail">{{ 'Rooms'|_ }}*</label>
+                            <input name="rooms" type="number" class="form-control" id="userBookingRooms" placeholder="How many rooms do you need ?">
                         </div>
                     </div>
                 </div>
@@ -52,18 +52,18 @@ bookedDates = {{ booked_dates|raw }};
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <label for="userBookingArrival">Arrival*</label>
+                            <label for="userBookingArrival">{{ 'Arrival'|_ }}*</label>
                             <div class="input-group">
-                                <input name="arrival" type="date" class="form-control" id="userBookingArrival" data-date="{{"now"|date('Y-m-d')}}" data-date-format="yyyy-mm-dd" placeholder="Arrival">
+                                <input name="arrival" type="date" class="form-control" id="userBookingArrival" data-date="{{"now"|date('Y-m-d')}}" data-date-format="yyyy-mm-dd" placeholder="Arrival date">
                                 <span class="input-group-addon"><i class="icon-th"></i></span>
                         </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <label for="userBookingDeparture">Departure*</label>
+                            <label for="userBookingDeparture">{{ 'Departure'|_ }}*</label>
                             <div class="input-group">
-                                <input name="departure" type="date" class="form-control" id="userBookingDeparture" data-date="{{"now"|date('Y-m-d')}}" data-date-format="yyyy-mm-dd" placeholder="Departure">
+                                <input name="departure" type="date" class="form-control" id="userBookingDeparture" data-date="{{"now"|date('Y-m-d')}}" data-date-format="yyyy-mm-dd" placeholder="Departure date">
                                 <span class="input-group-addon"><i class="icon-th"></i></span>
                             </div>
                         </div>
@@ -71,14 +71,14 @@ bookedDates = {{ booked_dates|raw }};
                 </div>
                 <div class="row">
                     <div class="col-xs-12" id="totalNights">
-                        <p class="bg-success hide" style="padding:10px 15px;"><span class="total">0</span> night<span class="plural"></span> to book</p>
+                        <p class="bg-success hide" style="padding:10px 15px;"><span class="total">0</span> {{ 'night'|_ }}<span class="plural"></span> {{ 'to book'|_ }}</p>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label for="userBookingPay">How do you plan to pay ?</label>
+                            <label for="userBookingPay">{{ 'How do you plan to pay ?'|_ }}</label>
                             <select name="pay_plan" class="form-control" id="userBookingPay">
                                 <option value="none">Select one</option>
                                 <option value="Money">Money</option>
@@ -99,10 +99,10 @@ bookedDates = {{ booked_dates|raw }};
     
     <fieldset>
         <div class="form-group">
-            <label for="userBookingComment">Comment</label>
-            <textarea name="comment" class="form-control" id="userBookingComment"></textarea>
+            <label for="userBookingComment">{{ 'Comment'|_ }}</label>
+            <textarea name="comment" class="form-control" id="userBookingComment" placeholder="Want to give more informations ?"></textarea>
         </div>
     </fieldset>
     <input type="hidden" name="room_id" value="{{ room.id }}">
-    <button type="submit" class="btn btn-primary">Book</button>
+    <button type="submit" class="btn btn-primary">{{ 'Book'|_ }}</button>
 </form>

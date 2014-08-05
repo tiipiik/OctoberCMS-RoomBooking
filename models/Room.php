@@ -106,20 +106,6 @@ class Room extends Model
 
         return $obj->paginate($perPage);
     }
-    
-    /*
-     * Retrun room name from it's url
-     *
-     */
-    public static function getRoomName($slug)
-    {
-        $room = self::select('id')
-            ->where('slug', '=', $slug)
-            ->first();
-        $name = $room->name;
-        
-        return $name;
-    }
 
     public static function formatHtml($input, $preview = false)
     {
