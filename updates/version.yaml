@@ -7,3 +7,5 @@
     - Avoid booking negative dates in datepicker
 1.0.3:
     - Fix bad placeholders names in the bookingForm component
+1.0.4:
+    - Plugin backend is now translatable

@@ -2,7 +2,7 @@
 
 return [
     'booking' => [
-        'amount'=>'Amount',
+        'amount'=>'Amoont',
         'currency'=>'Currency',
         'validated'=>'Validated',
         'registered'=>'Registered',
