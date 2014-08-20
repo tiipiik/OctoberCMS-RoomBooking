@@ -1,5 +1,6 @@
 <?php namespace Tiipiik\Booking\Components;
 
+use DB;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Request;
 use Response;
@@ -33,6 +34,11 @@ class Room extends ComponentBase
         $this->room = $this->page['room'] = $this->loadRoom();
         $this->page->meta_title = $this->room->name;
         $this->page->meta_description = $this->room->except;
+        
+        // To use add ùse DB` at the top of this page
+        //echo '<pre>';
+        //$queries = DB::getQueryLog();
+        //dd($queries); // only last query -> dd(end($queries));
             
         if (!$this->room) {
             return Response::make($this->controller->run('404'), 400, array());

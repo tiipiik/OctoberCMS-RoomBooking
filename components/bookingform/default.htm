@@ -81,9 +81,9 @@ bookedDates = {{ booked_dates|raw }};
                             <label for="userBookingPay">{{ 'How do you plan to pay ?'|_ }}</label>
                             <select name="pay_plan" class="form-control" id="userBookingPay">
                                 <option value="none">Select one</option>
-                                <option value="Money">Money</option>
-                                <option value="Master Card, Visa">Master Card, Visa</option>
-                                <option value="other">Other</option>
+                                {% for payplan in payplans %}
+                                    <option value="{{ payplan.id }}">{{ payplan.title }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>

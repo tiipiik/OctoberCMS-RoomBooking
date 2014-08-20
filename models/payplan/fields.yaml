@@ -3,6 +3,6 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    title:
+        label: tiipiik.booking::lang.payplans.backend.name
+        placeholder: tiipiik.booking::lang.payplans.backend.name_ph

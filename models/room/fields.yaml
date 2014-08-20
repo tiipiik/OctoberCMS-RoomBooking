@@ -18,7 +18,7 @@ fields:
             data-input-preset-closest-parent: form
 
     is_available:
-        label: Available (Manualy activate or deactivate)
+        label: tiipiik.booking::lang.room.backend.available_manual
         type: switch
         span: auto
 

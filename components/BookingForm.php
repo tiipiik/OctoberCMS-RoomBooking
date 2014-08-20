@@ -9,7 +9,7 @@ use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
 use Tiipiik\Booking\Models\Booking;
-//use Tiipiik\Booking\Components\Room;
+use Tiipiik\Booking\Models\PayPlan;
 
 
 // custom validation rules (could be place in an external file) -- use with not_in rule
@@ -81,6 +81,8 @@ class BookingForm extends ComponentBase
         $slug = str_replace(':', '', $slug);
         $slug = $this->param($slug);
         
+        $this->payplans = $this->page['payplans'] = $this->listPayPlans();
+        
         $bookedDates = Booking::getBookedDates($slug);
         $this->booked_dates = $this->page['booked_dates'] = json_encode($bookedDates);
     }
@@ -121,7 +123,7 @@ class BookingForm extends ComponentBase
         $booking->rooms = $data['rooms'];
         $booking->arrival = $data['arrival'];
         $booking->departure = $data['departure'];
-        $booking->pay_plan = $data['pay_plan'];
+        $booking->pay_plan_id = $data['pay_plan'];
         $booking->comment = $data['comment'];
         $booking->total_days = '';
         $booking->total_nights = '';
@@ -137,6 +139,23 @@ class BookingForm extends ComponentBase
         if ($redirectUrl = post('redirect', $redirectUrl))
             return Redirect::intended($redirectUrl);
         
+    }
+    
+    protected function listPayPlans()
+    {
+        $aPayplans = [];
+        $payplans = PayPlan::all();
+        if (sizeof($payplans) > 0)
+        {
+            foreach ($payplans as $payplan)
+            {
+                $aPayplans[] = [
+                    'id' => $payplan->id,
+                    'title' => $payplan->title,
+                ];
+            }
+        }
+        return $aPayplans;
     }
 
 }

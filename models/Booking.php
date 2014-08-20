@@ -3,6 +3,7 @@
 use Model;
 use Carbon\Carbon;
 use Tiipiik\Booking\Models\Room;
+use Tiipiik\Booking\Models\PayPLan;
 
 /**
  * Booking Model
@@ -50,7 +51,8 @@ class Booking extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'Room' => ['Tiipiik\Booking\Models\Room']
+        'Room' => ['Tiipiik\Booking\Models\Room'],
+        'PayPlan' => ['Tiipiik\Booking\Models\PayPlan']
     ];
     public $belongsToMany = [];
     public $morphTo = [];
@@ -79,6 +81,28 @@ class Booking extends Model
         }
         
         return $aRooms;
+    }
+    
+    public static function getPayPlanOptions()
+    {
+        $allPayPlans = PayPlan::select('id','title')
+            ->get();
+        
+        $aPayPlans = [];
+        
+        if (sizeof($allPayPlans) == 0)
+        {
+            $aPayPlans = [
+                ''=>'There is no pay plan, create one.'
+            ];
+        }
+        
+        foreach ($allPayPlans as $data)
+        {
+            $aPayPlans[$data->id] = $data->title;
+        }
+        
+        return $aPayPlans;
     }
 
     public static function getBookedDates($roomSlug = null)

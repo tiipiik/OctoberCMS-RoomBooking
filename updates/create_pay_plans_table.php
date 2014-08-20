@@ -12,6 +12,7 @@ class CreatePayPlansTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('title');
             $table->timestamps();
         });
     }

@@ -7,9 +7,10 @@ fields:
         label: tiipiik.booking::lang.booking.backend.room_id_label
         type: dropdown
         options: getRoomsOptions
+        placeholder: tiipiik.booking::lang.booking.backend.select_one
         
     validated:
-        label: Validated
+        label: tiipiik.booking::lang.booking.validated
         type: switch
         default: 0
         span: auto
@@ -99,10 +100,7 @@ secondaryTabs:
             tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
             label: tiipiik.booking::lang.booking.backend.pay_plan.options_title
             type: dropdown
-            options:
-                0: None
-                MasterCard, Visa: MasterCard, Visa
-                Money: Money
-                Other: Other
+            options: getPayPlanOptions
+            placeholder: tiipiik.booking::lang.booking.backend.select_one
             span: left
             cssClass: col-sm-4

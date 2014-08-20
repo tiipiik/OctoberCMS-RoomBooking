@@ -43,7 +43,8 @@ return [
                 'total_nights'=>'Total nights',
                 'pay_plan'=>'Pay plan',
                 'comment'=>'Comment',
-            ]
+            ],
+            'select_one' => '-- Select one --',
         ],
     ],
     'room' => [
@@ -53,6 +54,7 @@ return [
             'name_placeholder'=>'New room name or number',
             'slug'=>'Slug',
             'slug_placeholder'=>'new-room-name-or-number',
+            'available_manual'=>'Available (Manualy activate or deactivate)',
             'description_tab_title'=>'Full description',
             'manage_tab_title'=>'Manage',
             'excerpt'=>'Excerpt',
@@ -63,5 +65,12 @@ return [
                 'available'=>'Available',
             ]
         ],
-    ]
+    ],
+    'payplans' => [
+        'backend' => [
+            'new'=>'New PayPlan',
+            'name'=>'Title',
+            'name_ph'=>'Give this pay plan a name',
+        ],
+    ],
 ];

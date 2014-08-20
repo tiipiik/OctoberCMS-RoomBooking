@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: PayPlan
+
+# Model Form Field configuration
+form: @/plugins/tiipiik/booking/models/payplan/fields.yaml
+
+# Model Class name
+modelClass: Tiipiik\Booking\Models\PayPlan
+
+# Default redirect location
+defaultRedirect: tiipiik/booking/payplans
+
+# Create page
+create:
+    title: Create PayPlans
+    redirect: tiipiik/booking/payplans/update/:id
+    redirectClose: tiipiik/booking/payplans
+
+# Update page
+update:
+    title: Edit PayPlans
+    redirect: tiipiik/booking/payplans
+    redirectClose: tiipiik/booking/payplans
+
+# Preview page
+preview:
+    title: Preview PayPlans

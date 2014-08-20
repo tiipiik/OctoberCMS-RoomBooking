@@ -9,3 +9,9 @@
     - Fix bad placeholders names in the bookingForm component
 1.0.4:
     - Plugin backend is now translatable
+1.0.5:
+    - Added Pay Plans to backend
+    - create_pay_plans_table.php
+1.0.6:
+    - Fully functionnal Pay Plans and are now set as relation
+    - convert_bookings_payplan_to_payplanid.php

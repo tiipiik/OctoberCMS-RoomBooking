@@ -43,7 +43,8 @@ return [
                 'total_nights'=>'Nuitées',
                 'pay_plan'=>'Paiement',
                 'comment'=>'Commentaire',
-            ]
+            ],
+            'select_one' => '-- Sélectionner --',
         ],
     ],
     'room' => [
@@ -53,6 +54,7 @@ return [
             'name_placeholder'=>'Nouveau nom ou numéro de chambre',
             'slug'=>'Url',
             'slug_placeholder'=>'nouveau-nom-ou-numero-de-chambre',
+            'available_manual'=>'Disponible (Activer ou désactiver manuellement)',
             'description_tab_title'=>'Description complète',
             'manage_tab_title'=>'Détails',
             'excerpt'=>'Description courte',
@@ -63,5 +65,12 @@ return [
                 'available'=>'Disponible',
             ]
         ],
-    ]
+    ],
+    'payplans' => [
+        'backend' => [
+            'new'=>'Nouveau moyen de paiement',
+            'name'=>'Nom',
+            'name_ph'=>'Donnez un nom à ce moyen de paiement',
+        ],
+    ],
 ];

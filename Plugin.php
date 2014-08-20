@@ -66,6 +66,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-gear',
                         'permissions' => ['user:*'],
                     ],
+                    'payplans'  => [
+                        'label'       => 'Pay PLans',
+                        'url'         => Backend::url('tiipiik/booking/payplans'),
+                        'icon'        => 'icon-money',
+                        'permissions' => ['user:*'],
+                    ],
                 ]
             ]
         ];
