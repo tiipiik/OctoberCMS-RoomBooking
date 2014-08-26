@@ -9,6 +9,9 @@ use Tiipiik\Booking\Classes\TagProcessor;
  */
 class Plugin extends PluginBase
 {
+
+    public $require = ['RainLab.Translate'];
+    
     /**
      * Returns information about this plugin.
      *
