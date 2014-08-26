@@ -15,3 +15,5 @@
 1.0.6:
     - Fully functionnal Pay Plans and are now set as relation
     - convert_bookings_payplan_to_payplanid.php
+1.0.7:
+    - Added required plugin for Rainlab.Translate
