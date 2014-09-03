@@ -41,7 +41,7 @@ class Booking extends Model
         'total_nights' => '',
         'amount' => '',
         'currency' => '',
-        'pay_plan' => '',
+        'pay_plan_id' => '',
         'comment' => ''
     ];
 

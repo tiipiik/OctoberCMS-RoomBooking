@@ -1,7 +1,3 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: tiipiik.booking::lang.booking.backend.columns.id

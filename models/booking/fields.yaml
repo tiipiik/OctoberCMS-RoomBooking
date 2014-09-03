@@ -96,7 +96,7 @@ secondaryTabs:
             span: right
             cssClass: col-sm-4
             
-        pay_plan:
+        pay_plan_id:
             tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
             label: tiipiik.booking::lang.booking.backend.pay_plan.options_title
             type: dropdown

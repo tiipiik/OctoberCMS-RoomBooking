@@ -62,6 +62,8 @@ class RoomList extends ComponentBase
     {
         $this->rooms = $this->page['rooms'] = $this->listRooms();
         $this->noRoomsMessage = $this->page['noRoomsMessage'] = $this->property('noRoomsMessage');
+        // get the path of current theme
+        //$this->themePath = $this->page['themePath'] = $this->themeUrl();
         
         $this->roomParam = $this->page['roomParam'] = $this->property('roomParam');
         $this->roomPage = $this->page['roomPage'] = $this->property('roomPage');
