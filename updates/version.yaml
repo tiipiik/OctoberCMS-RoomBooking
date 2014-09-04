@@ -17,3 +17,6 @@
     - convert_bookings_payplan_to_payplanid.php
 1.0.7:
     - Added required plugin for Rainlab.Translate
+1.0.8:
+    - Fixes issue on displaying Bookings
+    - Add translatable to rooms and pay plans
