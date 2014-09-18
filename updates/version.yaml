@@ -22,3 +22,5 @@
     - Add translatable to rooms and pay plans
 1.0.9:
     - Fixes empty field passed to Carbon
+1.0.10:
+    - Remove Date type for datepickers input (Avoid a conflict with browsers which implements HTML5 data type input)
