@@ -121,8 +121,8 @@ class BookingForm extends ComponentBase
         $booking->phone = $data['phone'];
         $booking->persons = $data['persons'];
         $booking->rooms = $data['rooms'];
-        $booking->arrival = $data['arrival'];
-        $booking->departure = $data['departure'];
+        $booking->arrival = self::reforgeDate($data['arrival']);
+        $booking->departure = self::reforgeDate($data['departure']);
         $booking->pay_plan_id = $data['pay_plan'];
         $booking->comment = $data['comment'];
         $booking->total_days = 0;
@@ -139,6 +139,14 @@ class BookingForm extends ComponentBase
         if ($redirectUrl = post('redirect', $redirectUrl))
             return Redirect::intended($redirectUrl);
         
+    }
+    
+    private function reforgeDate($date)
+    {
+        $aDate = explode('-', $date);
+        $reforgedDate = $aDate[2].'-'.$aDate[1].'-'.$aDate[0];
+        
+        return $reforgedDate;
     }
     
     protected function listPayPlans()
