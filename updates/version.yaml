@@ -24,3 +24,5 @@
     - Fixes empty field passed to Carbon
 1.0.10:
     - Remove Date type for datepickers input (Avoid a conflict with browsers which implements HTML5 data type input)
+1.0.11:
+    - Fixed bug from dates and bad fields seeds
