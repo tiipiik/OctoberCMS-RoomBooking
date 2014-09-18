@@ -20,3 +20,5 @@
 1.0.8:
     - Fixes issue on displaying Bookings
     - Add translatable to rooms and pay plans
+1.0.9:
+    - Fixes empty field passed to Carbon
