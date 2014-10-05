@@ -26,3 +26,5 @@
     - Remove Date type for datepickers input (Avoid a conflict with browsers which implements HTML5 data type input)
 1.0.11:
     - Fixed bug from dates and bad fields seeds
+1.0.12:
+    - Fixed typo in Booking model that was runing an exception

@@ -3,7 +3,7 @@
 use Model;
 use Carbon\Carbon;
 use Tiipiik\Booking\Models\Room;
-use Tiipiik\Booking\Models\PayPLan;
+use Tiipiik\Booking\Models\PayPlan;
 
 /**
  * Booking Model
