@@ -6,7 +6,8 @@ columns:
     name:
         label: tiipiik.booking::lang.booking.backend.columns.room_name
         relation: Room
-        select: @name
+        select: name
+        sortable: false
         
     full_name:
         label: tiipiik.booking::lang.booking.backend.columns.customer_name

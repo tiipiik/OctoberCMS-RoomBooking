@@ -28,3 +28,5 @@
     - Fixed bug from dates and bad fields seeds
 1.0.12:
     - Fixed typo in Booking model that was runing an exception
+1.0.13:
+    - Removed sorting by Room in Bookings
