@@ -30,3 +30,5 @@
     - Fixed typo in Booking model that was runing an exception
 1.0.13:
     - Removed sorting by Room in Bookings
+1.0.14:
+    - Display booked dates only if they are validated
