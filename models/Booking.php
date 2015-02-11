@@ -122,12 +122,14 @@ class Booking extends Model
         {
             $booking = self::select('arrival','departure')
                 ->where('room_id', '=', $roomId)
+                ->whereValidated(1)
                 ->get();
         }
         else
         {
             // No room id ? Get all booked dates of all rooms (in this case we consider that only one room exists) 
             $booking = self::select('arrival','departure')
+                ->whereValidated(1)
                 ->get();
         }
         
