@@ -2,6 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Tiipiik\Booking\Models\Room;
 
 /**
  * Rooms Back-end Controller

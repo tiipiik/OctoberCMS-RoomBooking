@@ -32,3 +32,5 @@
     - Removed sorting by Room in Bookings
 1.0.14:
     - Display booked dates only if they are validated
+1.0.15:
+    - Fix little issue on room creation
