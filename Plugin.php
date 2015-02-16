@@ -20,8 +20,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Booking',
-            'description' => 'Room Booking plugin, with front and backend',
+            'name'        => 'tiipiik.booking::lang.plugin_name',
+            'description' => 'tiipiik.booking::lang.plugin_description',
             'author'      => 'Tiipiik',
             'icon'        => 'icon-leaf'
         ];

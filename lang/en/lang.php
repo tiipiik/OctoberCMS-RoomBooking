@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'plugin_name' => 'Booking',
+    'plugin_description' => 'Room Booking plugin, with front and backend',
     'booking' => [
         'amount'=>'Amoont',
         'currency'=>'Currency',
@@ -71,6 +73,43 @@ return [
             'new'=>'New PayPlan',
             'name'=>'Title',
             'name_ph'=>'Give this pay plan a name',
+        ],
+    ],
+    'components' => [
+        'booking_form' => [
+            'name' =>'Booking Form',
+            'description' =>'Display booking form',
+            'params' => [
+                'redirect_title' => 'Redirect to',
+                'redirect_desc' => 'Page name to redirect to after booking success',
+                'room_page_title' => 'Room slug',
+                'room_page_desc' => 'The expected parameter name used to the room page. Should be the same as the "Room slug" into the Room Details component',
+            ],
+        ],
+        'room' => [
+            'name' => 'Room details',
+            'description' => 'Display a room details on the page',
+            'params' => [
+                'slug_title' => 'Slug param',
+                'slug_desc' => 'The URL route parameter used for looking up the room by its slug.',
+            ],
+        ],
+        'room_list' => [
+            'name' => 'Room List Component',
+            'description' => 'Display a list of rooms',
+            'params' => [
+                'rooms_per_page_title' => 'Rooms per page',
+                'room_per_page_validation' => 'Invalid format of the rooms per page value',
+                'page_param_title' => 'Pagination parameter name',
+                'page_param_desc' => 'The expected parameter name used by the pagination pages.',
+                'room_page_title' => 'Room page',
+                'room_page_desc' => 'Name of the room page file for the "Learn more" links. This property is used by the default component partial.',
+                'room_slug_title' => 'Room slug',
+                'room_slug_desc' => 'The expected parameter name used when creating links to the room page.',
+                'no_room_title' => 'No rooms message',
+                'no_room_desc' => 'Message to display in the booking room list in case if there are no rooms. This property is used by the default component partial.',
+                'no_room_default' => 'No room found',
+            ],
         ],
     ],
 ];

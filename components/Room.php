@@ -12,8 +12,8 @@ class Room extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Room details',
-            'description' => 'Display a room details on the page'
+            'name'        => 'tiipiik.booking::lang.components.room.name',
+            'description' => 'tiipiik.booking::lang.components.room.description'
         ];
     }
 
@@ -21,8 +21,8 @@ class Room extends ComponentBase
     {
         return [
             'idParam' => [
-                'title'       => 'Slug param name',
-                'description' => 'The URL route parameter used for looking up the room by its slug.',
+                'title'       => 'tiipiik.booking::lang.components.room.params.slug_title',
+                'description' => 'tiipiik.booking::lang.components.room.params.slug_desc',
                 'default'     => ':slug',
                 'type'        => 'string'
             ],
@@ -35,7 +35,7 @@ class Room extends ComponentBase
         $this->page->meta_title = $this->room->name;
         $this->page->meta_description = $this->room->except;
         
-        // To use add ùse DB` at the top of this page
+        // To use add `use DB` at the top of this page
         //echo '<pre>';
         //$queries = DB::getQueryLog();
         //dd($queries); // only last query -> dd(end($queries));

@@ -11,8 +11,8 @@ class RoomList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Room List Component',
-            'description' => 'Display a list of rooms'
+            'name'        => 'tiipiik.booking::lang.components.room_list.name',
+            'description' => 'tiipiik.booking::lang.components.room_list.description'
         ];
     }
 
@@ -20,35 +20,35 @@ class RoomList extends ComponentBase
     {
         return [
             'roomsPerPage' => [
-                'title'             => 'Rooms per page',
+                'title'             => 'tiipiik.booking::lang.components.room_list.params.rooms_per_page_title',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format of the rooms per page value',
+                'validationMessage' => 'tiipiik.booking::lang.components.room_list.params.room_per_page_validation',
                 'default'           => '10',
             ],
             'pageParam' => [
-                'title'       => 'Pagination parameter name',
-                'description' => 'The expected parameter name used by the pagination pages.',
+                'title'       => 'tiipiik.booking::lang.components.room_list.params.page_param_title',
+                'description' => 'tiipiik.booking::lang.components.room_list.params.page_param_desc',
                 'type'        => 'string',
                 'default'     => ':page',
             ],
             'roomPage' => [
-                'title'       => 'Room page',
-                'description' => 'Name of the room page file for the "Learn more" links. This property is used by the default component partial.',
+                'title'       => 'tiipiik.booking::lang.components.room_list.params.room_page_title',
+                'description' => 'tiipiik.booking::lang.components.room_list.params.room_page_desc',
                 'type'        => 'dropdown',
                 'default'     => 'booking/room'
             ],
             'roomPageIdParam' => [
-                'title'       => 'Room page param name',
-                'description' => 'The expected parameter name used when creating links to the room page.',
+                'title'       => 'tiipiik.booking::lang.components.room_list.params.room_slug_title',
+                'description' => 'tiipiik.booking::lang.components.room_list.params.room_slug_desc',
                 'type'        => 'string',
                 'default'     => ':slug',
             ],
             'noRoomsMessage' => [
-                'title'        => 'No rooms message',
-                'description'  => 'Message to display in the booking room list in case if there are no rooms. This property is used by the default component partial.',
+                'title'        => 'tiipiik.booking::lang.components.room_list.params.no_room_title',
+                'description'  => 'tiipiik.booking::lang.components.room_list.params.no_room_desc',
                 'type'         => 'string',
-                'default'      => 'No rooms found'
+                'default'      => 'tiipiik.booking::lang.components.room_list.params.no_room_default'
             ],
         ];
     }

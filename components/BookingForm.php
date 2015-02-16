@@ -42,8 +42,8 @@ class BookingForm extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Booking Form Component',
-            'description' => 'Display booking form'
+            'name'        => 'tiipiik.booking::lang.components.booking_form.name',
+            'description' => 'tiipiik.booking::lang.components.booking_form.description'
         ];
     }
 
@@ -51,14 +51,14 @@ class BookingForm extends ComponentBase
     {
         return [
             'redirect' => [
-                'title'       => 'Redirect to',
-                'description' => 'Page name to redirect to after booking success',
+                'title'       => 'tiipiik.booking::lang.components.booking_form.params.redirect_title',
+                'description' => 'tiipiik.booking::lang.components.booking_form.params.redirect_desc',
                 'type'        => 'dropdown',
                 'default'     => '',
             ],
             'roomPageIdParam' => [
-                'title'       => 'Room page param name',
-                'description' => 'The expected parameter name used to the room page. Should be the same as the "Slug param name" into the Room Details component',
+                'title'       => 'tiipiik.booking::lang.components.booking_form.params.room_page_title',
+                'description' => 'tiipiik.booking::lang.components.booking_form.params.room_page_desc',
                 'type'        => 'string',
                 'default'     => ':slug',
             ],
