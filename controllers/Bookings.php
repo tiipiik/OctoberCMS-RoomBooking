@@ -18,6 +18,8 @@ class Bookings extends Controller
 
     public $bodyClass = 'compact-container';
 
+    public $requiredPermissions = ['tiipiik.booking.access_bookings'];
+
     public function __construct()
     {
         parent::__construct();

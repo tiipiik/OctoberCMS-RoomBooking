@@ -46,6 +46,24 @@ class Plugin extends PluginBase
         ];
     }
     
+	public function registerPermissions()
+	{
+		return [
+            'tiipiik.booking.access_bookings' => [
+                'tab' => 'tiipiik.booking::lang.permissions.tab',
+                'label' => 'tiipiik.booking::lang.permissions.bookings'
+            ],
+            'tiipiik.booking.access_rooms' => [
+                'tab' => 'tiipiik.booking::lang.permissions.tab',
+                'label' => 'tiipiik.booking::lang.permissions.bookings'
+            ],
+            'tiipiik.booking.access_payplans' => [
+                'tab' => 'tiipiik.booking::lang.permissions.tab',
+                'label' => 'tiipiik.booking::lang.permissions.bookings'
+            ],
+        ];
+	} 
+    
     public function registerNavigation()
     {
         return [
@@ -53,7 +71,7 @@ class Plugin extends PluginBase
                 'label'       => 'Room Booking',
                 'url'         => Backend::url('tiipiik/booking/bookings'),
                 'icon'        => 'icon-list',
-                'permissions' => ['user:*'],
+                'permissions' => ['tiipiik.booking.*'],
                 'order'       => 500,
                 
                 'sideMenu'    => [
@@ -61,19 +79,19 @@ class Plugin extends PluginBase
                         'label'       => 'Bookings',
                         'url'         => Backend::url('tiipiik/booking/bookings'),
                         'icon'        => 'icon-list',
-                        'permissions' => ['user:*'],
+                        'permissions' => ['tiipiik.booking.access_bookings'],
                     ],
                     'rooms'  => [
                         'label'       => 'Rooms',
                         'url'         => Backend::url('tiipiik/booking/rooms'),
                         'icon'        => 'icon-gear',
-                        'permissions' => ['user:*'],
+                        'permissions' => ['tiipiik.booking.access_rooms'],
                     ],
                     'payplans'  => [
                         'label'       => 'Pay PLans',
                         'url'         => Backend::url('tiipiik/booking/payplans'),
                         'icon'        => 'icon-money',
-                        'permissions' => ['user:*'],
+                        'permissions' => ['tiipiik.booking.access_payplans'],
                     ],
                 ]
             ]

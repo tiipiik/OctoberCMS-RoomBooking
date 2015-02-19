@@ -112,4 +112,10 @@ return [
             ],
         ],
     ],
+    'permissions' => [
+        'tab' => 'Réservations',
+        'bookings' => 'Gérer les réservations',
+        'rooms' => 'Gérer les chambres',
+        'payplans' => 'Gérer les moyens de paiement',
+    ],
 ];

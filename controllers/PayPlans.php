@@ -16,6 +16,8 @@ class PayPlans extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
+    public $requiredPermissions = ['tiipiik.booking.access_payplans'];
+
     public function __construct()
     {
         parent::__construct();

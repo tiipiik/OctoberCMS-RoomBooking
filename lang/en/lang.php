@@ -112,4 +112,10 @@ return [
             ],
         ],
     ],
+    'permissions' => [
+        'tab' => 'Room Bookings',
+        'bookings' => 'Manage bookings',
+        'rooms' => 'Manage rooms',
+        'payplans' => 'Manage pay plans',
+    ],
 ];

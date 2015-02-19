@@ -19,6 +19,8 @@ class Rooms extends Controller
 
     public $bodyClass = 'compact-container';
 
+    public $requiredPermissions = ['tiipiik.booking.access_rooms'];
+
     public function __construct()
     {
         parent::__construct();
