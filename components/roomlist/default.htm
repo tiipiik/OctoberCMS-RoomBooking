@@ -1,27 +1,27 @@
 <ul class="post-list">
     {% for room in rooms %}
         <li>
-            <a href="{{ roomPage|app({ (roomPageIdParam): room.slug}) }}/{{ room.slug }}">{{ room.name }}</a>
+            <a href="{{ roomPage|app({ (room_page_slug): room.slug}) }}/{{ room.slug }}">{{ room.name }}</a>
         </li>
     {% else %}
         <li class="no-data">{{ noRoomsMessage }}</li>
     {% endfor %}
 </ul>
 
-{% if rooms.getLastPage > 1 %}
+{% if rooms.lastPage > 1 %}
     <ul class="pagination">
-        {% if rooms.getCurrentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (rooms.getCurrentPage-1) }) }}">&larr; Prev</a></li>
+        {% if rooms.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (rooms.currentPage-1) }) }}">&larr; Prev</a></li>
         {% endif %}
 
-        {% for page in 1..rooms.getLastPage %}
-            <li class="{{ rooms.getCurrentPage == page ? 'active' : null }}">
+        {% for page in 1..rooms.lastPage %}
+            <li class="{{ rooms.currentPage == page ? 'active' : null }}">
                 <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
             </li>
         {% endfor %}
 
-        {% if posts.getLastPage > rooms.getCurrentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (rooms.getCurrentPage+1) }) }}">Next &rarr;</a></li>
+        {% if posts.getLastPage > rooms.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (rooms.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
 {% endif %}

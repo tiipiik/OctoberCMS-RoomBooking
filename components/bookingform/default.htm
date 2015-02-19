@@ -3,6 +3,7 @@ var bookedDates = {};
 bookedDates = {{ booked_dates|raw }};
 </script>
 
+<div class="container">
 <form
     data-request="onBooking">
 
@@ -106,3 +107,4 @@ bookedDates = {{ booked_dates|raw }};
     <input type="hidden" name="room_id" value="{{ room.id }}">
     <button type="submit" class="btn btn-primary">{{ 'Book'|_ }}</button>
 </form>
+</div>

@@ -38,11 +38,11 @@ class RoomList extends ComponentBase
                 'type'        => 'dropdown',
                 'default'     => 'booking/room'
             ],
-            'roomPageIdParam' => [
+            'room_page_slug' => [
                 'title'       => 'tiipiik.booking::lang.components.room_list.params.room_slug_title',
                 'description' => 'tiipiik.booking::lang.components.room_list.params.room_slug_desc',
                 'type'        => 'string',
-                'default'     => ':slug',
+                'default'     => '{{ :slug }}',
             ],
             'noRoomsMessage' => [
                 'title'        => 'tiipiik.booking::lang.components.room_list.params.no_room_title',
@@ -67,13 +67,13 @@ class RoomList extends ComponentBase
         
         $this->roomParam = $this->page['roomParam'] = $this->property('roomParam');
         $this->roomPage = $this->page['roomPage'] = $this->property('roomPage');
-        $this->roomPageIdParam = $this->page['roomPageIdParam'] = $this->property('roomPageIdParam');
+        $this->room_page_slug = $this->page['room_page_slug'] = $this->property('room_page_slug');
     }
     
     protected function listRooms()
     {
         return Room::make()->listFrontEnd([
-            'room' => $this->propertyOrParam('roomParam'),
+            'room' => $this->property('room_page_slug'),
         ]);
     }
 

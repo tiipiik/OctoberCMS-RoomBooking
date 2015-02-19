@@ -7,7 +7,7 @@ use Validator;
 use Exception;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use October\Rain\Support\ValidationException;
+use ValidationException;
 use Tiipiik\Booking\Models\Booking;
 use Tiipiik\Booking\Models\PayPlan;
 
@@ -56,11 +56,11 @@ class BookingForm extends ComponentBase
                 'type'        => 'dropdown',
                 'default'     => '',
             ],
-            'roomPageIdParam' => [
+            'room_slug' => [
                 'title'       => 'tiipiik.booking::lang.components.booking_form.params.room_page_title',
                 'description' => 'tiipiik.booking::lang.components.booking_form.params.room_page_desc',
                 'type'        => 'string',
-                'default'     => ':slug',
+                'default'     => '{{ :slug }}',
             ],
         ];
     }
@@ -77,9 +77,9 @@ class BookingForm extends ComponentBase
         $this->addJS('/plugins/tiipiik/booking/assets/js/dpb-booking.js');
         
         $room = new Room;
-        $slug = $room->property('idParam');
-        $slug = str_replace(':', '', $slug);
-        $slug = $this->param($slug);
+        $slug = $room->property('room_slug');
+        //$slug = str_replace(':', '', $slug);
+        //$slug = $this->param($slug);
         
         $this->payplans = $this->page['payplans'] = $this->listPayPlans();
         

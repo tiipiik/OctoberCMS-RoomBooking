@@ -106,7 +106,6 @@ class Room extends Model
         $allowedSortingOptions = ['name', 'created_at', 'updated_at'];
         $searchableFields = ['name', 'slug', 'content'];
 
-        App::make('paginator')->setCurrentPage($page);
         $obj = $this->newQuery();
         
         /*
@@ -131,7 +130,7 @@ class Room extends Model
             $obj->searchWhere($search, $searchableFields);
         }
 
-        return $obj->paginate($perPage);
+        return $obj->paginate($perPage, $page);
     }
 
     public static function formatHtml($input, $preview = false)

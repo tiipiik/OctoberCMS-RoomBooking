@@ -20,10 +20,10 @@ class Room extends ComponentBase
     public function defineProperties()
     {
         return [
-            'idParam' => [
+            'slug' => [
                 'title'       => 'tiipiik.booking::lang.components.room.params.slug_title',
                 'description' => 'tiipiik.booking::lang.components.room.params.slug_desc',
-                'default'     => ':slug',
+                'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
         ];
@@ -47,7 +47,7 @@ class Room extends ComponentBase
 
     protected function loadRoom()
     {
-        $slug = $this->propertyOrParam('idParam');
+        $slug = $this->property('slug');
         return RoomDetails::where('slug', '=', $slug)->first();
     }
 
