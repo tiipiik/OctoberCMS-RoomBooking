@@ -42,3 +42,5 @@
     - Added user permissions
 1.1.1:
     - Fix compatibility with RC
+1.1.2:
+    - Fix booked dates of each room

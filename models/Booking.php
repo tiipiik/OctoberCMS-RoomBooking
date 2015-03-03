@@ -105,33 +105,26 @@ class Booking extends Model
         return $aPayPlans;
     }
 
-    public static function getBookedDates($roomSlug = null)
+    public static function getBookedDates($room_slug = null)
     {
         // Retrieve room id from slug
-        if (isset($roomSlug))
+        if (isset($room_slug))
         {
             $room = Room::select('id')
-                ->where('slug', '=', $roomSlug)
+                ->whereSlug($room_slug)
                 ->first();
-            $roomId = $room->id;
+            $room_id = $room->id;
         }
         
         // Select booked dates
-        // don't know why this doesn't work when separate requests oO
-        if (isset($roomSlug))
+        $booking = self::select('arrival', 'departure');
+        
+        if (isset($room_slug))
         {
-            $booking = self::select('arrival','departure')
-                ->where('room_id', '=', $roomId)
-                ->whereValidated(1)
-                ->get();
+            $booking = $booking->whereRoomId($room_id);
         }
-        else
-        {
-            // No room id ? Get all booked dates of all rooms (in this case we consider that only one room exists) 
-            $booking = self::select('arrival','departure')
-                ->whereValidated(1)
-                ->get();
-        }
+        $booking = $booking->whereValidated(1)->get();
+        
         
         // Construct array of booked dates
         $bookedDates = [];

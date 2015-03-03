@@ -76,10 +76,8 @@ class BookingForm extends ComponentBase
         $this->addJs('/plugins/tiipiik/booking/assets/js/bootstrap-datepicker.js');
         $this->addJS('/plugins/tiipiik/booking/assets/js/dpb-booking.js');
         
-        $room = new Room;
-        $slug = $room->property('room_slug');
-        //$slug = str_replace(':', '', $slug);
-        //$slug = $this->param($slug);
+        //$room = new Room;
+        $slug = $this->property('room_slug');
         
         $this->payplans = $this->page['payplans'] = $this->listPayPlans();
         
