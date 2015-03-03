@@ -3,8 +3,8 @@
 use App;
 use Str;
 use Model;
-use October\Rain\Support\Markdown;
-use October\Rain\Support\ValidationException;
+use Markdown;
+use ValidationException;
 use Tiipiik\Booking\Classes\TagProcessor;
 use Cms\Classes\Controller as BaseController;
 
