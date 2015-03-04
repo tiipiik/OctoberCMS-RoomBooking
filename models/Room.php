@@ -98,7 +98,7 @@ class Room extends Model
          */
         extract(array_merge([
             'page' => 1,
-            'perPage' => 30,
+            'perPage' => (int) $options['perPage'],
             'sort' => 'created_at',
             'search' => '',
         ], $options));
