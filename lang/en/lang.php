@@ -3,8 +3,9 @@
 return [
     'plugin_name' => 'Booking',
     'plugin_description' => 'Room Booking plugin, with front and backend',
+    'settings_description' => 'Configure Tiipiik room booking plugin',
     'booking' => [
-        'amount'=>'Amoont',
+        'amount'=>'Amount',
         'currency'=>'Currency',
         'validated'=>'Validated',
         'registered'=>'Registered',
@@ -117,5 +118,6 @@ return [
         'bookings' => 'Manage bookings',
         'rooms' => 'Manage rooms',
         'payplans' => 'Manage pay plans',
+        'settings' => 'Manage settings',
     ],
 ];

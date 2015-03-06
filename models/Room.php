@@ -7,6 +7,8 @@ use Markdown;
 use ValidationException;
 use Tiipiik\Booking\Classes\TagProcessor;
 use Cms\Classes\Controller as BaseController;
+use Tiipiik\Booking\Models\Settings;
+use Url;
 
 /**
  * Room Model
@@ -148,6 +150,47 @@ class Room extends Model
     public function beforeSave()
     {
         $this->content_html = self::formatHtml($this->content);
+    }
+
+    /**
+     * Handler for the pages.menuitem.getTypeInfo event.
+     * Returns a menu item type information. The type information is returned as array
+     */
+    public static function getMenuTypeInfo($type)
+    {
+        return [
+            'dynamicItems' => true
+        ];
+    }
+
+    /**
+     * Handler for the pages.menuitem.resolveItem event.
+     * Returns information about a menu item. The result is an array
+     */
+    public static function resolveMenuItem($item, $url, $theme)
+    {
+        $result = [
+            'items' => []
+        ];
+
+        $rooms = self::orderBy('name')->get();
+        $roomPage = Settings::get('roomPage');
+
+        foreach ($rooms as $room) {
+            $fullSlug = $roomPage .'/'. $room->slug;
+
+            $roomItem = [
+                'title' => $room->name,
+                'url'   => Url::action('Cms\Classes\Controller@run', ['slug' => $fullSlug]),
+                'mtime' => $room->updated_at,
+            ];
+
+            $roomItem['isActive'] = $roomItem['url'] == $url;
+
+            $result['items'][] = $roomItem;
+        }
+
+        return $result;
     }
 
 }

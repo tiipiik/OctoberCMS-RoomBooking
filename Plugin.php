@@ -1,8 +1,10 @@
 <?php namespace Tiipiik\Booking;
 
 use Backend;
+use Event;
 use System\Classes\PluginBase;
 use Tiipiik\Booking\Classes\TagProcessor;
+use Tiipiik\Booking\Models\Room;
 
 /**
  * Booking Plugin Information File
@@ -55,11 +57,15 @@ class Plugin extends PluginBase
             ],
             'tiipiik.booking.access_rooms' => [
                 'tab' => 'tiipiik.booking::lang.permissions.tab',
-                'label' => 'tiipiik.booking::lang.permissions.bookings'
+                'label' => 'tiipiik.booking::lang.permissions.rooms'
             ],
             'tiipiik.booking.access_payplans' => [
                 'tab' => 'tiipiik.booking::lang.permissions.tab',
-                'label' => 'tiipiik.booking::lang.permissions.bookings'
+                'label' => 'tiipiik.booking::lang.permissions.payplans'
+            ],
+            'tiipiik.booking.manage_settings' => [
+                'tab' => 'tiipiik.booking::lang.permissions.tab',
+                'label' => 'tiipiik.booking::lang.permissions.settings'
             ],
         ];
 	} 
@@ -98,6 +104,20 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerSettings()
+    {
+        return [
+            'config' => [
+                'label'       => 'tiipiik.booking::lang.plugin_name',
+                'icon'        => 'icon-list',
+                'description' => 'tiipiik.booking::lang.settings_description',
+                'class'       => 'Tiipiik\Booking\Models\Settings',
+                'permissions' => ['tiipiik.booking.manage_settings'],
+                'keywords'    => 'room booking pay plans'
+            ]
+        ];
+    }
+
     /**
      * Register method, called when the plugin is first registered.
      */
@@ -121,6 +141,28 @@ class Plugin extends PluginBase
                     <input type="file" class="trigger"/>
                 </span>', 
             $input);
+        });
+    }
+
+    public function boot()
+    {
+        /*
+         * Register menu items for the RainLab.Pages and RainLab.Sitemap plugin
+         */
+        Event::listen('pages.menuitem.listTypes', function() {
+            return [
+                'all-rooms' => 'All rooms',
+            ];
+        });
+
+        Event::listen('pages.menuitem.getTypeInfo', function($type) {
+            if ($type == 'all-rooms')
+                return Room::getMenuTypeInfo($type);
+        });
+
+        Event::listen('pages.menuitem.resolveItem', function($type, $item, $url, $theme) {
+            if ($type == 'all-rooms')
+                return Room::resolveMenuItem($item, $url, $theme);
         });
     }
 }
