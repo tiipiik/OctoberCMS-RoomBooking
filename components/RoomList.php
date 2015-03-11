@@ -74,6 +74,7 @@ class RoomList extends ComponentBase
     {
         return Room::make()->listFrontEnd([
             'room' => $this->property('room_page_slug'),
+            'perPage' => $this->property('roomsPerPage'),
         ]);
     }
 
