@@ -1,0 +1,14 @@
+fields:
+    roomPage:
+        span: left
+        label: tiipiik.booking::lang.components.room_list.params.room_page_title
+        comment: tiipiik.booking::lang.components.room_list.params.room_page_desc
+        default: booking/room
+        placeholder: booking/room
+
+    room_page_slug:
+        span: right
+        label: tiipiik.booking::lang.components.room_list.params.room_slug_title
+        comment: tiipiik.booking::lang.components.room_list.params.room_slug_desc
+        default: '{{ :slug }}'
+        placeholder: '{{ :slug }}'

@@ -4,6 +4,7 @@ use App;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Tiipiik\Booking\Models\Room;
+use Tiipiik\Booking\Models\Settings;
 
 class RoomList extends ComponentBase
 {
@@ -32,18 +33,6 @@ class RoomList extends ComponentBase
                 'type'        => 'string',
                 'default'     => ':page',
             ],
-            'roomPage' => [
-                'title'       => 'tiipiik.booking::lang.components.room_list.params.room_page_title',
-                'description' => 'tiipiik.booking::lang.components.room_list.params.room_page_desc',
-                'type'        => 'dropdown',
-                'default'     => 'booking/room'
-            ],
-            'room_page_slug' => [
-                'title'       => 'tiipiik.booking::lang.components.room_list.params.room_slug_title',
-                'description' => 'tiipiik.booking::lang.components.room_list.params.room_slug_desc',
-                'type'        => 'string',
-                'default'     => '{{ :slug }}',
-            ],
             'noRoomsMessage' => [
                 'title'        => 'tiipiik.booking::lang.components.room_list.params.no_room_title',
                 'description'  => 'tiipiik.booking::lang.components.room_list.params.no_room_desc',
@@ -66,14 +55,14 @@ class RoomList extends ComponentBase
         //$this->themePath = $this->page['themePath'] = $this->themeUrl();
         
         $this->roomParam = $this->page['roomParam'] = $this->property('roomParam');
-        $this->roomPage = $this->page['roomPage'] = $this->property('roomPage');
-        $this->room_page_slug = $this->page['room_page_slug'] = $this->property('room_page_slug');
+        $this->roomPage = $this->page['roomPage'] = Settings::get('roomPage');
+        $this->room_page_slug = $this->page['room_page_slug'] = Settings::get('room_page_slug');
     }
     
     protected function listRooms()
     {
         return Room::make()->listFrontEnd([
-            'room' => $this->property('room_page_slug'),
+            'room' => Settings::get('room_page_slug'),
         ]);
     }
 
