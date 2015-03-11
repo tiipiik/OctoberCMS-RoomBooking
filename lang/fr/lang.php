@@ -3,6 +3,7 @@
 return [
     'plugin_name' => 'Réservations',
     'plugin_description' => 'Créez et gérer vos réservations de chambres, pour hôtels, gîtes...',
+    'settings_description' => 'Configurer le plugin de réservation de chambre',
     'booking' => [
         'amount'=>'Montant',
         'currency'=>'Devise',

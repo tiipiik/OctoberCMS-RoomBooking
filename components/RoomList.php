@@ -54,7 +54,7 @@ class RoomList extends ComponentBase
         // get the path of current theme
         //$this->themePath = $this->page['themePath'] = $this->themeUrl();
         
-        $this->roomParam = $this->page['roomParam'] = $this->property('roomParam');
+        //$this->roomParam = $this->page['roomParam'] = $this->property('roomParam');
         $this->roomPage = $this->page['roomPage'] = Settings::get('roomPage');
         $this->room_page_slug = $this->page['room_page_slug'] = Settings::get('room_page_slug');
     }
@@ -63,6 +63,7 @@ class RoomList extends ComponentBase
     {
         return Room::make()->listFrontEnd([
             'room' => Settings::get('room_page_slug'),
+            'perPage' => $this->property('roomsPerPage'),
         ]);
     }
 
