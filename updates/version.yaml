@@ -50,3 +50,5 @@
     - Some settings were moved to the backend and added RainLab.Sitemap support. PR by @matissjanis
 1.1.5:
     - Added russian langauge, thnaks to @maximlit for his PR
+1.1.6:
+    - Fix storage for total nights
