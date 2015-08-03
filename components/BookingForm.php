@@ -124,7 +124,7 @@ class BookingForm extends ComponentBase
         $booking->pay_plan_id = $data['pay_plan'];
         $booking->comment = $data['comment'];
         $booking->total_days = 0;
-        $booking->total_nights = 0;
+        $booking->total_nights = $data['total_nights'];
         $booking->amount = 0;
         $booking->currency = '';
         $booking->save();
