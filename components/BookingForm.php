@@ -123,7 +123,7 @@ class BookingForm extends ComponentBase
         $booking->departure = self::reforgeDate($data['departure']);
         $booking->pay_plan_id = $data['pay_plan'];
         $booking->comment = $data['comment'];
-        $booking->total_days = 0;
+        $booking->total_days = $data['total_nights'] + 1;
         $booking->total_nights = $data['total_nights'];
         $booking->amount = 0;
         $booking->currency = '';
