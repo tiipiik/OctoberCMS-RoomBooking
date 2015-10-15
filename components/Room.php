@@ -8,6 +8,7 @@ use Tiipiik\Booking\Models\Room as RoomDetails;
 
 class Room extends ComponentBase
 {
+    protected $room;
 
     public function componentDetails()
     {

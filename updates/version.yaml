@@ -54,3 +54,5 @@
     - Fix storage for total nights
 1.1.7:
     - Fix total nights / days, thanks to @m.paniez9292
+1.1.8:
+    - Fix bug in Room component
