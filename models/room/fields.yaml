@@ -32,22 +32,14 @@ secondaryTabs:
     fields:
         content:
             tab: tiipiik.booking::lang.room.backend.description_tab_title
-            stretch: true
-            span: left
-            cssClass: no-padding
-            type: codeeditor
-            language: markdown
-            showGutter: false
-            wrapWords: true
-            fontSize: 13
-            margin: 15
+            type: richeditor
 
-        preview:
-            type: Tiipiik\Booking\FormWidgets\Preview
-            tab: tiipiik.booking::lang.room.backend.description_tab_title
-            stretch: true
-            span: right
-            cssClass: no-padding
+        # preview:
+        #     type: Tiipiik\Booking\FormWidgets\Preview
+        #     tab: tiipiik.booking::lang.room.backend.description_tab_title
+        #     stretch: true
+        #     span: right
+        #     cssClass: no-padding
     
         excerpt:
             tab: tiipiik.booking::lang.room.backend.manage_tab_title
