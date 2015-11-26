@@ -33,7 +33,7 @@
             }
             if (!isNaN(diff) || diff > 0) {
                 $('#totalNights p .total').html(diff);
-                $('#totalNights .total_nights').val(diff);
+                $('#totalNights #total_nights').val(diff);
                 $('#totalNights p').removeClass('hide');
                 if (diff > 1) {
                     $('#totalNights p .plural').html('s');

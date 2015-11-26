@@ -58,3 +58,5 @@
     - Fix bug in Room component
 1.1.9:
     - Markdown editor replaced by richeeditor, thanks to @mabasic
+1.1.10:
+    - Correct/Fix total nights, thanks to @m.paniez9292
