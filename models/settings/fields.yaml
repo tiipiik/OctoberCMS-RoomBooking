@@ -12,3 +12,7 @@ fields:
         comment: tiipiik.booking::lang.components.room_list.params.room_slug_desc
         default: '{{ :slug }}'
         placeholder: '{{ :slug }}'
+
+    email_notifications:
+        label: E-mail for email_notifications
+        comment: Add e-mail to automatically send notifications to this e-mail when someone book a room.

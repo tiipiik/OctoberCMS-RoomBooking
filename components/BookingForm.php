@@ -1,5 +1,6 @@
 <?php namespace Tiipiik\Booking\Components;
 
+use Mail;
 use Flash;
 use Input;
 use Redirect;
@@ -10,6 +11,7 @@ use Cms\Classes\ComponentBase;
 use ValidationException;
 use Tiipiik\Booking\Models\Booking;
 use Tiipiik\Booking\Models\PayPlan;
+use Tiipiik\Booking\Models\Settings;
 
 
 // custom validation rules (could be place in an external file) -- use with not_in rule
@@ -134,9 +136,19 @@ class BookingForm extends ComponentBase
          */
         $redirectUrl = $this->pageUrl($this->property('redirect'));
 
+        $data = [
+            'subject' => 'Booking notification',
+            'booking' => $booking,
+        ];
+
+        $email = Settings::get('email_notifications');
+
+        Mail::send('tiipiik.booking::mail.send_notification', $data, function ($m) use ($email) {
+            $m->to($email);
+        });
+
         if ($redirectUrl = post('redirect', $redirectUrl))
             return Redirect::intended($redirectUrl);
-        
     }
     
     private function reforgeDate($date)
