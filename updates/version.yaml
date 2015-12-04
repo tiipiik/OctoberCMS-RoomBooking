@@ -60,3 +60,5 @@
     - Markdown editor replaced by richeeditor, thanks to @mabasic
 1.1.10:
     - Correct/Fix total nights, thanks to @m.paniez9292
+1.1.11:
+    - Added e-mail notifications
