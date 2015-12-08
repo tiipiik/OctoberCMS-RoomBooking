@@ -143,9 +143,12 @@ class BookingForm extends ComponentBase
 
         $email = Settings::get('email_notifications');
 
-        Mail::send('tiipiik.booking::mail.send_notification', $data, function ($m) use ($email) {
-            $m->to($email);
-        });
+        if ($email) {
+            Mail::send('tiipiik.booking::mail.send_notification', $data, function ($m) use ($email) {
+                $m->to($email);
+            });
+        }
+
 
         if ($redirectUrl = post('redirect', $redirectUrl))
             return Redirect::intended($redirectUrl);
