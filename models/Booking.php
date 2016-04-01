@@ -146,7 +146,7 @@ class Booking extends Model
                 // for each booked day, add entry in the array
                 for ($i=1;$i<=$diffInDays;$i++)
                 {
-                    $nextDate = $aDate->addDay()->format("Y-m-d");
+                    $nextDate = $aDate->format("Y-m-d");
                     $nextDate = explode('-', $nextDate);
                     
                     // Place year into array
@@ -166,6 +166,8 @@ class Booking extends Model
                     {
                         $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][] = (int) $nextDate[2];
                     }
+                    
+                    $aDate->addDay();
                 } 
             }
         }
