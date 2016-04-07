@@ -6,7 +6,7 @@
 name: PayPlan
 
 # Model Form Field configuration
-form: @/plugins/tiipiik/booking/models/payplan/fields.yaml
+form: ~/plugins/tiipiik/booking/models/payplan/fields.yaml
 
 # Model Class name
 modelClass: Tiipiik\Booking\Models\PayPlan
