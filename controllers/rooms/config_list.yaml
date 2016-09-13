@@ -3,7 +3,7 @@
 # ===================================
 
 # Model List Column configuration
-list: @/plugins/tiipiik/booking/models/room/columns.yaml
+list: ~/plugins/tiipiik/booking/models/room/columns.yaml
 
 # Model Class name
 modelClass: Tiipiik\Booking\Models\Room
