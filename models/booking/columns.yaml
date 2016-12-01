@@ -52,7 +52,7 @@ columns:
         label: tiipiik.booking::lang.booking.backend.columns.pay_plan
         invisible: true
         relation: PayPlan
-        select: @title
+        select: ~title
         
     comment:
         label: tiipiik.booking::lang.booking.backend.columns.comment

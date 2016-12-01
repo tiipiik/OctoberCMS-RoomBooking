@@ -6,7 +6,7 @@
 name: Room Booking
 
 # Model Form Field configuration
-form: @/plugins/tiipiik/booking/models/booking/fields.yaml
+form: ~/plugins/tiipiik/booking/models/booking/fields.yaml
 
 # Model Class name
 modelClass: Tiipiik\Booking\Models\Booking
