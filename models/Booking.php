@@ -131,44 +131,40 @@ class Booking extends Model
         
         foreach ($booking as $d)
         {
-            $arrival = explode('-', $d->{"arrival"});
-            $departure = explode('-', $d->{"departure"});
+            $arrival = $d->{"arrival"};
+            $departure = $d->{"departure"};
             
-            if (isset($arrival[0]) && !empty($arrival[0])
-                && isset($departure[0]) && !empty($departure[0]))
+            // Compute difference between arrival and departure, how many nights are booked ?
+            $aDate = new Carbon($arrival);
+            $dDate = new Carbon($departure);
+
+            $diffInDays = $dDate->diffInDays($aDate);
+
+            // for each booked day, add entry in the array
+            for ($i=1;$i<=$diffInDays;$i++)
             {
-                // Compute difference between arrival and departure, how many nights are booked ?
-                $aDate = Carbon::create($arrival[0], $arrival[1], $arrival[2], 0);
-                $dDate = Carbon::create($departure[0], $departure[1], $departure[2], 0);
-                
-                $diffInDays = $dDate->diffInDays($aDate);
-                
-                // for each booked day, add entry in the array
-                for ($i=1;$i<=$diffInDays;$i++)
+                $nextDate = $aDate->format("Y-m-d");
+                $nextDate = explode('-', $nextDate);
+
+                // Place year into array
+                if ( !in_array((int) $nextDate[2], $bookedDates) )
                 {
-                    $nextDate = $aDate->format("Y-m-d");
-                    $nextDate = explode('-', $nextDate);
-                    
-                    // Place year into array
-                    if ( !in_array((int) $nextDate[2], $bookedDates) )
-                    {
-                        $bookedDates[''] = [
-                            (int) $nextDate[2] => []
-                        ];
-                    }
-                    // Place month into array
-                    if ( !isset( $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1]]) )
-                    {
-                        $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ] = [];
-                    }
-                    // Place day into array
-                    if ( !isset($bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][ (int) $nextDate[2] ]) )
-                    {
-                        $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][] = (int) $nextDate[2];
-                    }
-                    
-                    $aDate->addDay();
-                } 
+                    $bookedDates[''] = [
+                        (int) $nextDate[2] => []
+                    ];
+                }
+                // Place month into array
+                if ( !isset( $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1]]) )
+                {
+                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ] = [];
+                }
+                // Place day into array
+                if ( !isset($bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][ (int) $nextDate[2] ]) )
+                {
+                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][] = (int) $nextDate[2];
+                }
+
+                $aDate->addDay();
             }
         }
         
