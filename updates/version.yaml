@@ -64,3 +64,5 @@
     - Added e-mail notifications
 1.1.12:
     - Fix error on sending notification when no e-mail was provided.
+1.1.13:
+    - Fix error on booked dates, thanks to @mabasic
