@@ -131,6 +131,7 @@ class Booking extends Model
         foreach ($bookings as $booking) {
             $arrival = new Carbon($booking['arrival']);
             $departure = new Carbon($booking['departure']);
+            $departure->setTime(0, 0, 0);
 
             while ($arrival->lt($departure)) {
                 $bookedDates->push([
