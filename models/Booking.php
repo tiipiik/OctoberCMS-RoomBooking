@@ -152,6 +152,8 @@ class Booking extends Model
             foreach ($months as $month) {
                 $days = $bookedDates->where('year', $year)->where('month', $month)->pluck('day')->unique()->sort()->values();
                 $array[$year][$month] = $days->toArray();
+            }
+        }
         
         return $array;
     }

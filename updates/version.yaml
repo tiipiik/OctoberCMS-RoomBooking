@@ -66,3 +66,5 @@
     - Fix error on sending notification when no e-mail was provided.
 1.1.13:
     - Fix error on booked dates, thanks to @mabasic
+1.1.14:
+    - Fixed wrong bookedDates, thanks to @mabasic
