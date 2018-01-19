@@ -117,58 +117,43 @@ class Booking extends Model
         }
         
         // Select booked dates
-        $booking = self::select('arrival', 'departure');
+        $bookings = self::select('arrival', 'departure');
         
         if (isset($room_slug))
         {
-            $booking = $booking->whereRoomId($room_id);
+            $bookings = $bookings->whereRoomId($room_id);
         }
-        $booking = $booking->whereValidated(1)->get();
-        
+        $bookings = $bookings->whereValidated(1)->get();
         
         // Construct array of booked dates
-        $bookedDates = [];
-        
-        foreach ($booking as $d)
-        {
-            $arrival = $d->{"arrival"};
-            $departure = $d->{"departure"};
-            
-            // Compute difference between arrival and departure, how many nights are booked ?
-            $aDate = new Carbon($arrival);
-            $dDate = new Carbon($departure);
+        $bookedDates = collect([]);
 
-            $diffInDays = $dDate->diffInDays($aDate);
+        // Creates all dates booked
+        foreach ($bookings as $booking) {
+            $arrival = new Carbon($booking['arrival']);
+            $departure = new Carbon($booking['departure']);
+            $departure->setTime(0, 0, 0);
 
-            // for each booked day, add entry in the array
-            for ($i=1;$i<=$diffInDays;$i++)
-            {
-                $nextDate = $aDate->format("Y-m-d");
-                $nextDate = explode('-', $nextDate);
-
-                // Place year into array
-                if ( !in_array((int) $nextDate[2], $bookedDates) )
-                {
-                    $bookedDates[''] = [
-                        (int) $nextDate[2] => []
-                    ];
-                }
-                // Place month into array
-                if ( !isset( $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1]]) )
-                {
-                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ] = [];
-                }
-                // Place day into array
-                if ( !isset($bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][ (int) $nextDate[2] ]) )
-                {
-                    $bookedDates[ (int) $nextDate[0] ][ (int) $nextDate[1] ][] = (int) $nextDate[2];
-                }
-
-                $aDate->addDay();
+            while ($arrival->lt($departure)) {
+                $bookedDates->push([
+                    'year' => $arrival->year,
+                    'month' => $arrival->month,
+                    'day' => $arrival->day
+                ]);
+                $arrival->addDay();
             }
         }
+
+        // Creates output array
+        $array = [];
+        $years = $bookedDates->pluck('year')->unique()->sort();
+        foreach ($years as $year) {
+            $months = $bookedDates->where('year', $year)->pluck('month')->unique()->sort();
+            foreach ($months as $month) {
+                $days = $bookedDates->where('year', $year)->where('month', $month)->pluck('day')->unique()->sort()->values();
+                $array[$year][$month] = $days->toArray();
         
-        return $bookedDates;
+        return $array;
     }
 
 }
