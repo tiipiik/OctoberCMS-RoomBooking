@@ -83,12 +83,14 @@ secondaryTabs:
             label: tiipiik.booking::lang.booking.backend.stay.nights
             span: left
             cssClass: col-sm-4
+            default: 0
             
         amount:
             tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
             label: tiipiik.booking::lang.booking.amount
             span: left
             cssClass: col-sm-4
+            default: 0
             
         currency:
             tab: tiipiik.booking::lang.booking.backend.pay_plan.tab_title
