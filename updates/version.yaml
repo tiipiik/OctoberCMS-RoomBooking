@@ -68,3 +68,5 @@
     - Fix error on booked dates, thanks to @mabasic
 1.1.14:
     - Fixed wrong bookedDates, thanks to @mabasic
+1.1.15:
+    - Workaround for amount and total_nights, thanks to @mabasic
